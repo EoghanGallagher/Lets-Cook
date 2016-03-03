@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateRecipesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        //Create Recipes Table
+        Schema::create( 'recipes', function ( Blueprint $table )
+        {
+
+            //Nested Set Fields
+            $table->increments( 'id' );
+            $table->string( 'title' );
+            $table->string( 'link' );
+            $table->integer( 'category' );
+            $table->integer( 'sub_category' );
+            $table->string( 'skill_level' );
+            $table->boolean( 'featured' );
+            $table->boolean( 'main_feature' );
+            $table->boolean( 'archived' );
+            $table->string( 'description' , 1000 );
+            $table->string( 'content_type' );
+
+            $table->timestamps();
+
+
+        });
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+        Schema::drop( 'recipes' );
+    }
+}
