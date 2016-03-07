@@ -20,6 +20,7 @@ class CreateRecipesTable extends Migration
             $table->increments( 'id' );
             $table->string( 'title' );
             $table->string( 'link' );
+            $table->string( 'thumbnail' );
             $table->integer( 'category' );
             $table->integer( 'sub_category' );
             $table->string( 'skill_level' );

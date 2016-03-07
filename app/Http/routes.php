@@ -29,3 +29,19 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+
+
+//Admin Routes
+//export Nested Products Table to Products export Table
+
+Route::get( 'admin' , function()
+{
+
+    return view( 'admin' );
+
+});
+
+Route::get( 'article' , 'AdminController@AddArticle' );
+
