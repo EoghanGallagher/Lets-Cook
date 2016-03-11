@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <title>Lets Cook</title>
-    <link href="../css/global-demo.css" rel="stylesheet" />
+
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -25,6 +25,7 @@
             text-align: center;
             text-shadow: 1px 1px 0 #fff, 2px 2px 0 #bbb;
         }
+
         hr {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #fff;
@@ -84,6 +85,7 @@
             border: 1px solid #ddd;
             font-size: 16px;
             font-size: 1rem;
+
             vertical-align: top;
             box-shadow: 0 0 5px #ddd;
             box-sizing: border-box;
@@ -92,6 +94,7 @@
         }
         ul.rig li img {
             max-width: 100%;
+            min-width: 100%;
             height: auto;
             margin: 0 0 10px;
         }
@@ -106,14 +109,19 @@
         /* class for 2 columns */
         ul.rig.columns-2 li {
             width: 47.5%; /* this value + 2.5 should = 50% */
+            min-height: 400px;
         }
         /* class for 3 columns */
         ul.rig.columns-3 li {
             width: 30.83%; /* this value + 2.5 should = 33% */
+            min-height: 375px;
+            max-height: 375px;
         }
         /* class for 4 columns */
         ul.rig.columns-4 li {
             width: 22.5%; /* this value + 2.5 should = 25% */
+            min-height: 325px;
+            max-height: 325px;
         }
 
         @media (max-width: 1199px) {
@@ -148,16 +156,16 @@
 
 <div class="wrapper">
     <div class="container">
-        <h1>Responsive Image Grids Using CSS</h1>
-        <ul class="grid-nav">
-            <li><a href="#" data-id="two-columns" class="active">2 Columns</a></li>
-            <li><a href="#" data-id="three-columns">3 Columns</a></li>
+        <h1>Featured Recipes</h1>
+       <!-- <ul class="grid-nav">
+            <li><a href="#" data-id="two-columns" >2 Columns</a></li>
+            <li><a href="#" data-id="three-columns" class="active">3 Columns</a></li>
             <li><a href="#" data-id="four-columns">4 Columns</a></li>
-        </ul>
+        </ul>-->
 
         <hr />
 
-        <div id="two-columns" class="grid-container" style="display:block;">
+        <div id="two-columns" class="grid-container" >
             <ul class="rig columns-2">
 
                 @foreach ( $featured as $value )
@@ -174,7 +182,7 @@
         </div>
         <!--/#two-columns-->
 
-        <div id="three-columns" class="grid-container">
+        <div id="three-columns" class="grid-container" style="display:block;">
 
             <ul class="rig columns-3">
 
@@ -195,7 +203,7 @@
         </div>
         <!--/#three-columns-->
 
-        <div id="four-columns" class="grid-container">
+      <!--  <div id="four-columns" class="grid-container">
             <ul class="rig columns-4">
 
                 @foreach ( $featured as $value )
@@ -210,7 +218,7 @@
 
 
             </ul>
-        </div>
+        </div> -->
         <!--/#four-columns-->
 
         <hr />

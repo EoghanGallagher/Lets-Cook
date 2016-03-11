@@ -55,6 +55,17 @@ class AdminController extends BaseController
             $recipe->main_feature = $_REQUEST[ 'main_feature' ];
             $recipe->archived = $_REQUEST[ 'archive' ];
 
+
+            $str_to_find = 'v=';
+
+            $link = $recipe->link;
+
+            $pos = strpos( $link , $str_to_find );
+
+            $video_id = substr( $link , $pos + 2 , strlen( $link ) );
+
+            $recipe->link = $video_id;
+
             $res =  $recipe->save();
 
             if( $res )
