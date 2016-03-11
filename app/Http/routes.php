@@ -44,4 +44,6 @@ Route::get( 'admin' , function()
 });
 
 Route::get( 'article' , 'AdminController@AddArticle' );
+Route::get( 'home' , 'LetsCookController@Home' );
+
 

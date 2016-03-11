@@ -20,7 +20,15 @@ class Recipe extends Model
     protected $table = 'recipes';
 
 
+    public $test = 'hello';
 
+
+
+
+    public function getTest()
+    {
+        return 'Test';
+    }
 
 
 }
