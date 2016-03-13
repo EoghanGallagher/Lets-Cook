@@ -30,16 +30,15 @@ class LetsCookController extends BaseController
 
         $res = Recipe::where( 'featured', '=', 1 )->get();
 
-
-       // $pos = strpos( $link , $str_to_find );
-
-
-        //$video_id = substr( $link , $pos + 2 , strlen( $link ) );
-
-
-
         return view( 'home' )->with( 'featured' , $res );
 
+    }
+
+
+    public function Recipe( $title , $id )
+    {
+        return view( 'recipe' )->with( 'video_id' , $id )
+            ->with( 'title' , $title  );
     }
 
 

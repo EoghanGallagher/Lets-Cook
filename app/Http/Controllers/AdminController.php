@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Recipe;
-use Faker\Provider\Base;
+
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -56,15 +56,14 @@ class AdminController extends BaseController
             $recipe->archived = $_REQUEST[ 'archive' ];
 
 
-            $str_to_find = 'v=';
-
             $link = $recipe->link;
 
-            $pos = strpos( $link , $str_to_find );
+            parse_str( parse_url( $link, PHP_URL_QUERY ), $my_array_of_vars );
 
-            $video_id = substr( $link , $pos + 2 , strlen( $link ) );
 
-            $recipe->link = $video_id;
+            $recipe->link = $my_array_of_vars['v'];
+
+
 
             $res =  $recipe->save();
 

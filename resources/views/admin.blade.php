@@ -2,35 +2,7 @@
 
 @section('content')
 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Lets Cook Admin</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">Sign in</button>
-                </form>
-            </div><!--/.navbar-collapse -->
-        </div>
-    </nav>
-
-
-
-
+    
     <div class="container">
         <!-- Example row of columns -->
 
@@ -47,9 +19,9 @@
         <br/>
 
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-offset-2  col-md-8">
 
-                <form>
+                <form id="recipes">
                     <fieldset class="form-group">
                         <label for="title">Title</label>
                         <input name="title" type="text" class="form-control" id="title" placeholder="">
@@ -63,6 +35,11 @@
                     <fieldset class="form-group">
                         <label for="description">Description</label>
                         <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="author">Author</label>
+                        <input name="author" class="form-control" id="author" placeholder="">
                     </fieldset>
 
                     <fieldset class="form-group">
@@ -107,7 +84,7 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="feature" id="feature"   type="checkbox"> Feature
+                            <input name="featured" id="featured"   type="checkbox"> Feature
                         </label>
                     </div>
 
@@ -153,6 +130,13 @@
         $( function()
         {
 
+            SaveRecipe();
+
+        });
+
+
+        function SaveRecipe()
+        {
             $( "#btn_save" ).click(function()
             {
                 var url = 'article'
@@ -160,6 +144,7 @@
                 var title;
                 var link;
                 var description;
+                var author;
                 var category;
                 var sub_category;
                 var skill_level;
@@ -191,6 +176,13 @@
                     alert( 'Description Field Cannot Be Empty' );
                 }
 
+                author = $( '#author' ).val();
+
+                if( author === '' )
+                {
+                    alert( 'Author Field Cannot Be Empty' );
+                }
+
 
                 category = $( '#category' ).val();
 
@@ -199,10 +191,20 @@
                     alert( 'Category Field Cannot Be Empty' );
                 }
 
+
+                if( $('#featured').is(':checked') )
+                {
+                    feature = 1;
+                }
+                else
+                {
+                    feature = 0;
+                }
+
                 sub_category = $( '#sub_category' ).val();
                 skill_level = $( '#skill_level' ).val();
                 content_type = $( '#content_type' ).val();
-                feature  = $( '#feature' ).val();;
+                author =  $( '#author' ).val();
                 main_feature = $( '#main_feature' ).val();
                 archive =  $( '#archive' ).val();
 
@@ -213,22 +215,22 @@
 
                     url: url,
 
-                data: {
+                    data: {
 
 
-                    title: title ,
-                    link: link,
-                    description: description,
-                    category: category,
-                    sub_category: sub_category,
-                    skill_level: skill_level,
-                    content_type: content_type,
-                    feature: feature,
-                    main_feature: main_feature,
-                    archive: archive
+                        title: title ,
+                        link: link,
+                        description: description,
+                        category: category,
+                        sub_category: sub_category,
+                        skill_level: skill_level,
+                        content_type: content_type,
+                        feature: feature,
+                        main_feature: main_feature,
+                        archive: archive
 
 
-                },
+                    },
 
                     error: function( error )
                     {
@@ -244,9 +246,11 @@
 
                 });
 
-            });
 
-        });
+                $('#recipes').trigger("reset");
+
+            });
+        }
 
     </script>
 
