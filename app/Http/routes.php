@@ -36,16 +36,16 @@ Route::group(['middleware' => ['web']], function () {
 //Admin Routes
 //export Nested Products Table to Products export Table
 
-Route::get( 'admin' , function()
-{
-
-    return view( 'admin' );
-
-});
+Route::get( 'admin' , 'AdminController@LoadAdmin'  );
 
 Route::get( 'article' , 'AdminController@AddArticle' );
-Route::get( 'home' , 'LetsCookController@Home' );
+Route::get( 'populate' , 'AdminController@PopulateTables' );
 
+
+
+Route::get( 'home' , 'LetsCookController@Home' );
 Route::get( 'recipe/{title}/{id}' , 'LetsCookController@Recipe' );
+
+
 
 

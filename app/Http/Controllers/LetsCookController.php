@@ -28,7 +28,7 @@ class LetsCookController extends BaseController
 
         $str_to_find = 'v=';
 
-        $res = Recipe::where( 'featured', '=', 1 )->get();
+        $res = Recipe::where( 'featured', '=', 1 )->paginate( 9 );
 
         return view( 'home' )->with( 'featured' , $res );
 

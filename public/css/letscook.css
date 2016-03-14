@@ -1,7 +1,7 @@
 
 .header-spacing
 {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .video-container {
@@ -19,3 +19,51 @@
     width: 100%;
     height: 100%;
 }
+
+.centered
+{
+    margin: 0 auto;
+
+}
+
+/* Override Jumbotrons Height */
+
+.jumbotron
+{
+    height: 100vh;
+}
+
+.navbar-default
+{
+    background-color: #c6c6c6;
+    border-color: #E7E7E7;
+}
+
+.navbar
+{
+    height: 80px;
+    padding-top: 15px;
+}
+
+.navbar-form .form-control
+{
+    width:600px;
+}
+
+.nav-link
+{
+    font-size: large;
+}
+
+
+
+.dropdown-menu
+{
+
+    width:500px;
+    height:400px;
+
+}
+
+
+

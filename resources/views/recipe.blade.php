@@ -7,7 +7,7 @@
 
                 <div class="col-md-offset-3 col-md-6 header-spacing" style="border-style: solid">
 
-                    <h1>{{ $title  }}</h1>
+                    <h1>{{ $title }}</h1>
 
                 </div>
 

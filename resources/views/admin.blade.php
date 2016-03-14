@@ -8,7 +8,7 @@
 
         <div class="row">
 
-            <div class="col-md-10">
+            <div class="col-md-offset-2  col-md-8">
 
                 <h3>Add Recipe</h3>
 
@@ -38,29 +38,52 @@
                     </fieldset>
 
                     <fieldset class="form-group">
+                        <label for="recipe">Recipe</label>
+                        <textarea name="recipe" class="form-control" id="recipe" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="form-group">
                         <label for="author">Author</label>
                         <input name="author" class="form-control" id="author" placeholder="">
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label for="category">Category</label>
-                        <select name="category" class="form-control" id="category">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="region">Region</label>
+                        <select name="region" class="form-control" id="region">
+
+                            @foreach ( $region as $value )
+
+                                <option value="{{  $value->id  }}">{{  $value->name  }}</option>
+
+                            @endforeach
+
                         </select>
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label for="sub_category">Sub Category</label>
-                        <select name="sub_category" class="form-control" id="sub_category">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label for="country">Country</label>
+                        <select name="country" class="form-control" id="country">
+
+                            @foreach ( $countries as $value )
+
+                                <option value="{{  $value->id  }}">{{  $value->name  }}</option>
+
+                            @endforeach
+
+                        </select>
+                    </fieldset>
+
+
+                    <fieldset class="form-group">
+                        <label for="category">Category</label>
+                        <select name="category" class="form-control" id="category">
+
+                            @foreach ( $categories as $value )
+
+                                <option value="{{  $value->id  }}">{{  $value->name  }}</option>
+
+                            @endforeach
+
                         </select>
                     </fieldset>
 
@@ -107,7 +130,7 @@
                         <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                     </fieldset>
 
-                    <button id="btn_save" class="btn btn-default" type=button>Save</button>
+                    <button id="btn_save" class="btn btn-default pull-right" type=button>Save</button>
 
 
                 </form>
@@ -144,6 +167,7 @@
                 var title;
                 var link;
                 var description;
+                var recipe;
                 var author;
                 var category;
                 var sub_category;
@@ -171,10 +195,9 @@
 
                 description = $( '#description' ).val();
 
-                if( description === '' )
-                {
-                    alert( 'Description Field Cannot Be Empty' );
-                }
+                recipe = $( '#recipe' ).val();
+
+
 
                 author = $( '#author' ).val();
 

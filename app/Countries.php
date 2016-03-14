@@ -13,11 +13,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Recipe extends Model
+class Countries extends Model
 {
 
 
-    protected $table = 'recipes';
+    protected $table = 'countries';
 
 
 

@@ -56,6 +56,9 @@
             </div>
 
 
+            <div class="centered">{{  $featured->links()  }}</div>
+
+
         <!--/#three-columns-->
 
       <!--  <div id="four-columns" class="grid-container">

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,11 @@ class CreateCategoryTable extends Migration
      */
     public function up()
     {
-        //
-        //Create Category Table
-        Schema::create( 'category', function ( Blueprint $table )
-        {
-
-            //Nested Set Fields
-            $table->increments( 'id' );
+        Schema::create('countries', function (Blueprint $table) {
+            $table->increments('id');
             $table->string( 'name' );
-
             $table->timestamps();
-
-
         });
-
     }
 
     /**
@@ -35,7 +26,6 @@ class CreateCategoryTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::drop( 'category' );
+        Schema::drop('countries');
     }
 }

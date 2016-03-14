@@ -11,12 +11,16 @@
 
     <title>Lets Cook Admin Page</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
-
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+
 
 
     <!-- Custom styles for this template -->
@@ -40,7 +44,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -51,24 +55,125 @@
             </button>
             <a class="navbar-brand" href="#">Lets Cook</a>
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+
+                <div class="input-group ">
+
+                    <input type="text" class="form-control" id="search-parameter" placeholder="Search">
+                    <div id="search-button" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+
                 </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
+
             </form>
-        </div><!--/.navbar-collapse -->
+
+        </div>
+
+
+    </div>
+</nav>-->
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Lets Cook Logo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+                <form class="navbar-form navbar-right">
+
+                    <div class="input-group ">
+
+                        <input type="text" class="form-control search" id="search-parameter" placeholder="Find a recipe">
+                        <div id="search-button" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+
+                    </div>
+
+                </form>
+
+
+        </div><!--/.nav-collapse -->
+
+
     </div>
 </nav>
+
+
+
+
 
 
 @yield('content')
 
 
+
+
+<script>
+
+    $(document).ready(function() {
+        $(".dropdown-toggle").dropdown();
+    });
+
+    $( function()
+    {
+
+
+
+
+        Search();
+
+        Browse();
+
+    });
+
+
+    function Search()
+    {
+
+        $( "#search-button" ).click(function()
+        {
+            alert( $( '#search-parameter').val() );
+
+        });
+
+    }
+
+
+    function Browse()
+    {
+
+        $( "#browse" ).click(function()
+        {
+
+            alert( 'Browse Clicked' );
+
+        });
+
+    }
+
+</script>
 </body>
 </html>
 
