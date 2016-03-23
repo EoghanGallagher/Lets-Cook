@@ -55,6 +55,8 @@ class AdminController extends BaseController
             $recipe->title = $_REQUEST['title'];
             $recipe->link = $_REQUEST['link'];
             $recipe->description = $_REQUEST['description'];
+            $recipe->ingredients = $_REQUEST['ingredients'];
+            $recipe->instructions = $_REQUEST['instructions'];
 
             $recipe->region = $_REQUEST['region'];
             $recipe->country = $_REQUEST['country'];

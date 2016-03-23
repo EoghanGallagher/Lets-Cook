@@ -38,8 +38,13 @@
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label for="recipe">Recipe</label>
-                        <textarea name="recipe" class="form-control" id="recipe" rows="3"></textarea>
+                        <label for="recipe">Ingredients</label>
+                        <textarea name="ingredients" class="form-control" id="ingredients" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="recipe">Instructions</label>
+                        <textarea name="instructions" class="form-control" id="instructions" rows="3"></textarea>
                     </fieldset>
 
                     <fieldset class="form-group">
@@ -173,6 +178,8 @@
                 var title;
                 var link;
                 var description;
+                var ingredients;
+                var instructions;
                 var recipe;
                 var author;
                 var region;
@@ -203,6 +210,8 @@
 
 
                 description = $( '#description' ).val();
+                ingredients = $( '#ingredients' ).val();
+                instructions = $( '#instructions' ).val();
 
                 recipe = $( '#recipe' ).val();
 
@@ -276,6 +285,8 @@
                         title: title ,
                         link: link,
                         description: description,
+                        ingredients: ingredients,
+                        instructions: instructions,
                         region: region,
                         country: country,
                         category: category,
