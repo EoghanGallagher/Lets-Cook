@@ -35,10 +35,30 @@ class LetsCookController extends BaseController
     }
 
 
-    public function Recipe( $title , $id )
+    public function Recipe( $title , $id , $link )
     {
-        return view( 'recipe' )->with( 'video_id' , $id )
-            ->with( 'title' , $title  );
+        return view( 'recipe' )->with( 'video_id' , $link )
+            ->with( 'title' , $title  )
+            ->with( 'id' , $id  );
+
+    }
+
+    public function Recipes( $id )
+    {
+
+        return view( 'recipes' );
+
+    }
+
+    public function Report( $id )
+    {
+
+        $recipe = Recipe::find( 1 );
+
+        $recipe->broken_link = true;
+
+        $recipe->save();
+
     }
 
 

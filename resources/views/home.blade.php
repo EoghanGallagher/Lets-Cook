@@ -39,7 +39,7 @@
 
                     @foreach ( $featured as $value )
 
-                        <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'link' ]  }}">
+                        <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
 
                             <li>
                                 <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />

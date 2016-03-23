@@ -89,16 +89,76 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a><a href="#">Action</a><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                    <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="1"><a href="#">Appetizers & Snacks</a></li>
+                                    <li class="divider"></li>
+                                    <li value="2"><a href="#">Barbecue & Grilling</a></li>
+                                    <li class="divider"></li>
+                                    <li value="3"><a href="#">Bread Recipes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="4"><a href="#">Breakfast & Brunch</a></li>
+                                    <li class="divider"></li>
+                                    <li value="5"><a href="#">Desserts</a></li>
+                                    <li class="divider"></li>
+                                    <li value="6"><a href="#">Dinner Recipes</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="7"><a href="#">Drinks</a></li>
+                                    <li class="divider"></li>
+                                    <li value="8"><a href="#">Eggs</a></li>
+                                    <li class="divider"></li>
+                                    <li value="9"><a href="#">Free From Recipes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="10"><a href="#">Fruits & Vegtables</a></li>
+                                    <li class="divider"></li>
+                                    <li value="11"><a href="#">Healthy Recipes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="12"><a href="#">Holidays & Events</a></li>
+                                    <li class="divider"></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="14"><a href="#">Lunch Recipes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="15"><a href="#">Main Dishes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="16"><a href="#">Meat and Poultry</a></li>
+                                    <li class="divider"></li>
+                                    <li value="17"><a href="#">Pasta & Noodles</a></li>
+                                    <li class="divider"></li>
+                                    <li value="18"><a href="#">Salad Recipes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Seafood Recipes</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="20"><a href="#">Side Dishes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="21"><a href="#">Soups</a></li>
+                                    <li class="divider"></li>
+                                    <li value="22"><a href="#">Stews</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Chili</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </ul>
                 </li>
+                <li><a href="/">How To Guides</a></li>
             </ul>
 
 
@@ -122,9 +182,6 @@
 
 
 
-
-
-
 @yield('content')
 
 
@@ -132,21 +189,19 @@
 
 <script>
 
-    $(document).ready(function() {
-        $(".dropdown-toggle").dropdown();
-    });
+
 
     $( function()
     {
-
-
-
 
         Search();
 
         Browse();
 
+        LoadPage();
+
     });
+
 
 
     function Search()
@@ -171,6 +226,24 @@
 
         });
 
+    }
+
+    function LoadPage()
+    {
+
+        var l = window.location;
+        var base_url = l.protocol + "//" + l.host + "/" ;
+
+        var url = base_url + 'recipes/';
+
+
+        $( "#main-dropdown li" ).click(function()
+        {
+            id = $( this ).val();
+
+            window.location.replace( url + id );
+
+        })
     }
 
 </script>

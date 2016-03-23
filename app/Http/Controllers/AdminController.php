@@ -38,13 +38,16 @@ class AdminController extends BaseController
         if (isset($_REQUEST['title']) ||
             isset($_REQUEST['link']) ||
             isset($_REQUEST['description']) ||
+            isset($_REQUEST['region']) ||
+            isset($_REQUEST['country']) ||
             isset($_REQUEST['category']) ||
             isset($_REQUEST['sub_category']) ||
             isset($_REQUEST['skill_level']) ||
             isset($_REQUEST['content_type']) ||
             isset($_REQUEST['feature']) ||
             isset($_REQUEST['main_feature']) ||
-            isset($_REQUEST['archive'])
+            isset($_REQUEST['published']) ||
+            isset( $_REQUEST['how_to_guide'] )
         ) {
 
             $recipe = new Recipe();
@@ -52,18 +55,21 @@ class AdminController extends BaseController
             $recipe->title = $_REQUEST['title'];
             $recipe->link = $_REQUEST['link'];
             $recipe->description = $_REQUEST['description'];
+
+            $recipe->region = $_REQUEST['region'];
+            $recipe->country = $_REQUEST['country'];
             $recipe->category = $_REQUEST['category'];
-            $recipe->sub_category = $_REQUEST['sub_category'];
+
             $recipe->skill_level = $_REQUEST['skill_level'];
             $recipe->content_type = $_REQUEST['content_type'];
             $recipe->featured = $_REQUEST['feature'];
             $recipe->main_feature = $_REQUEST['main_feature'];
-            $recipe->archived = $_REQUEST['archive'];
-
+            $recipe->published = $_REQUEST['published'];
+            $recipe->how_to_guide = $_REQUEST['how_to_guide'];
 
             $link = $recipe->link;
 
-            parse_str(parse_url($link, PHP_URL_QUERY), $my_array_of_vars);
+            parse_str( parse_url( $link, PHP_URL_QUERY ), $my_array_of_vars );
 
 
             $recipe->link = $my_array_of_vars['v'];
@@ -71,14 +77,17 @@ class AdminController extends BaseController
 
             $res = $recipe->save();
 
-            if ($res) {
+            if ( $res )
+            {
                 $msg = 'Record Saved Successfully';
-            } else {
+            }
+            else
+            {
                 $msg = 'Failed to Save Record';
             }
 
 
-            return json_encode($msg);
+            return json_encode( $msg );
 
 
         }
@@ -121,6 +130,7 @@ class AdminController extends BaseController
 
         $countries = [
 
+                [ 'name' => 'American' ],
                 [ 'name' => 'Argentinian' ],
                 [ 'name' => 'Armenian ' ],
                 [ 'name' => 'Australian' ],
@@ -207,28 +217,38 @@ class AdminController extends BaseController
 
                 [ 'name' => 'Welsh' ]
 
-
         ];
 
 
         $categories = [
 
-            [ 'name' => 'Appetizers' ],
-            [ 'name' => 'Baked Goods' ],
-            [ 'name' => 'Beverages' ],
-            [ 'name' => 'Confectionary' ],
+            [ 'name' => 'Appetizers and Snacks' ],
+            [ 'name' => 'BBQ and Grilling' ],
+            [ 'name' => 'Bread Recipes' ],
+            [ 'name' => 'Breakfast and Brunch' ],
             [ 'name' => 'Desserts' ],
-            [ 'name' => 'Dips & Spreads' ],
-            [ 'name' => 'Fish & Seafood' ],
-            [ 'name' => 'Fruits' ],
-            [ 'name' => 'Grains' ],
+            [ 'name' => 'Dinner Recipes' ],
+            [ 'name' => 'Drinks' ],
+            [ 'name' => 'Everyday Cooking' ],
+            [ 'name' => 'Free From Recipes' ],
+            [ 'name' => 'Fruits and Vegtables' ],
+            [ 'name' => 'Healthy Recipes' ],
+            [ 'name' => 'Holidays and Events' ],
+            [ 'name' => 'Ingredients' ],
+            [ 'name' => 'Lunch Recipes' ],
             [ 'name' => 'Main Dishes' ],
-            [ 'name' => 'Sides Dishes' ],
-            [ 'name' => 'Seasonal Dishes' ],
-            [ 'name' => 'Snacks' ],
+            [ 'name' => 'Meat and Poulty' ],
+            [ 'name' => 'Pasta and Noodles' ],
+            [ 'name' => 'Salad Recipes' ],
+            [ 'name' => 'Seafood Recipes' ],
+            [ 'name' => 'Side Dishes' ],
             [ 'name' => 'Soups' ],
-            [ 'name' => 'Vegetarian' ],
-            [ 'name' => 'Vegan' ]
+            [ 'name' => 'Stew' ],
+            [ 'name' => 'Chili' ],
+            [ 'name' => 'Trusted Brands' ],
+            [ 'name' => 'U.S. Recipes' ],
+            [ 'name' => 'World Cuisine' ]
+
 
         ];
 

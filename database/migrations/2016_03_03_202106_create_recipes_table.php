@@ -21,14 +21,18 @@ class CreateRecipesTable extends Migration
             $table->string( 'title' );
             $table->string( 'link' );
             $table->string( 'thumbnail' );
+            $table->integer( 'region' );
+            $table->integer( 'country' );
             $table->integer( 'category' );
             $table->integer( 'sub_category' );
             $table->string( 'skill_level' );
             $table->boolean( 'featured' );
             $table->boolean( 'main_feature' );
-            $table->boolean( 'archived' );
-            $table->string( 'description' , 1000 );
+            $table->boolean( 'published' );
+            $table->string( 'description' , 3000 );
             $table->string( 'content_type' );
+            $table->boolean( 'broken_link' );
+            $table->boolean( 'how_to_guide' );
 
             $table->timestamps();
 

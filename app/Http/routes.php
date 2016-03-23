@@ -44,7 +44,12 @@ Route::get( 'populate' , 'AdminController@PopulateTables' );
 
 
 Route::get( 'home' , 'LetsCookController@Home' );
-Route::get( 'recipe/{title}/{id}' , 'LetsCookController@Recipe' );
+Route::get( 'recipes/{id}' , 'LetsCookController@Recipes' );
+Route::get( 'recipe/{title}/{id}/{link}' , 'LetsCookController@Recipe' );
+
+//Report Broken Links
+Route::get( 'report/{id}' , 'LetsCookController@Report' );
+
 
 
 

@@ -46,12 +46,59 @@
 
                     <a href="/home">Home Page</a>
 
+                    <span>|</span>
+
+                    <a id="report-broken" name="{{ $id  }}"  href="#">Report Broken Link</a>
+
                 </div>
 
             </div>
 
         </div>
 
+    <script>
+
+        $( function()
+        {
+            $( "#report-broken" ).click(function()
+            {
+
+                id = $( '#report-broken' ).attr( 'name' );
+
+                ReportBrokenLink( id );
+
+            });
+        });
+
+
+        function ReportBrokenLink( id )
+        {
+            var l = window.location;
+            var base_url = l.protocol + "//" + l.host + "/" ;
+
+            var url = base_url + '/report/' + id;
+
+
+            $.ajax({
+
+                url: url,
+
+                error: function( error )
+                {
+                    // console.log( error )
+                },
+                dataType : 'json',
+                success: function( data )
+                {
+                    //alert( data );
+                    console.log( 'Response OK ' + data );
+                },
+                type: 'GET'
+
+            });
+        }
+
+    </script>
 
 
 @endsection

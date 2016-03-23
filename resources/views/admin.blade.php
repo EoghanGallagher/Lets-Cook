@@ -119,7 +119,13 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="archive" id="archive" type="checkbox"> Archive
+                            <input name="published" id="published" type="checkbox"> Published
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input name="how_to_guide" id="how_to_guide" type="checkbox"> How To Guide
                         </label>
                     </div>
 
@@ -169,13 +175,16 @@
                 var description;
                 var recipe;
                 var author;
+                var region;
+                var country;
                 var category;
                 var sub_category;
                 var skill_level;
                 var content_type;
                 var feature;
                 var main_feature;
-                var archive;
+                var published;
+                var how_to_guide;
 
                 title = $( '#title' ).val();
 
@@ -207,6 +216,8 @@
                 }
 
 
+                region = $( '#region').val();
+                country = $( '#country' ).val();
                 category = $( '#category' ).val();
 
                 if( category === '' )
@@ -224,12 +235,33 @@
                     feature = 0;
                 }
 
+                if( $('#published').is(':checked') )
+                {
+                    published = 1;
+                }
+                else
+                {
+                    published = 0;
+                }
+
+
+                if( $('#how_to_guide').is(':checked') )
+                {
+                    how_to_guide = 1;
+                }
+                else
+                {
+                    how_to_guide = 0;
+                }
+
                 sub_category = $( '#sub_category' ).val();
                 skill_level = $( '#skill_level' ).val();
                 content_type = $( '#content_type' ).val();
                 author =  $( '#author' ).val();
                 main_feature = $( '#main_feature' ).val();
-                archive =  $( '#archive' ).val();
+              //  published =  $( '#published' ).val();
+              //  how_to_guide = $( '#how_to_guide' ).val();
+
 
 
 
@@ -244,13 +276,16 @@
                         title: title ,
                         link: link,
                         description: description,
+                        region: region,
+                        country: country,
                         category: category,
                         sub_category: sub_category,
                         skill_level: skill_level,
                         content_type: content_type,
                         feature: feature,
                         main_feature: main_feature,
-                        archive: archive
+                        published: published,
+                        how_to_guide: how_to_guide
 
 
                     },
@@ -270,7 +305,7 @@
                 });
 
 
-                $('#recipes').trigger("reset");
+                //$('#recipes').trigger("reset");
 
             });
         }
