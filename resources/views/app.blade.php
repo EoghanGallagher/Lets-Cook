@@ -158,7 +158,7 @@
                         </div>
                     </ul>
                 </li>
-                <li><a href="/">How To Guides</a></li>
+                <li id="how_to_guide" value="9999"><a href="#">How To Guides</a></li>
             </ul>
 
 
@@ -244,6 +244,13 @@
             window.location.replace( url + id );
 
         })
+
+        $( "#how_to_guide").click( function() {
+
+            id = $( this ).val();
+            window.location.replace( url + id );
+
+        });
     }
 
 </script>

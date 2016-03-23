@@ -91,7 +91,7 @@
                 success: function( data )
                 {
                     //alert( data );
-                    console.log( 'Response OK ' + data );
+
                 },
                 type: 'GET'
 

@@ -130,7 +130,7 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="how_to_guide" id="how_to_guide" type="checkbox"> How To Guide
+                            <input name="howto" id="howto" type="checkbox"> How To Guide
                         </label>
                     </div>
 
@@ -254,13 +254,17 @@
                 }
 
 
-                if( $('#how_to_guide').is(':checked') )
+                if( $('#howto').is(':checked') )
                 {
                     how_to_guide = 1;
+
+
                 }
                 else
                 {
                     how_to_guide = 0;
+
+
                 }
 
                 sub_category = $( '#sub_category' ).val();

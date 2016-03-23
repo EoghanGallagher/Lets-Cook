@@ -25,16 +25,35 @@
             <!--/#two-columns-->
 
 
-            <div id="three-columns" class="grid-container" style="display:block;">
+            <div id="four-columns" class="grid-container" style="display:block;">
 
-                <ul class="rig columns-3">
+                <ul class="rig columns-4">
 
 
+
+                    @foreach ( $recipes as $value )
+
+                        <?php
+
+                        $link_title = $value[ 'title' ];
+
+                        ?>
+
+                        <a href="/recipe/{{ str_replace( ' ' , '-',  trim( $link_title ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
+
+                            <li>
+                                <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                <h3> {{ $value[ 'title' ]}} </h3>
+                                <p> {{ $value[ 'description' ]  }} </p>
+                            </li>
+
+                        </a>
+
+                    @endforeach
 
                 </ul>
 
             </div>
-
 
             <!--/#three-columns-->
 
@@ -49,10 +68,15 @@
 
             <hr />
 
+
         </div>
         <!--/.container-->
+
+
     </div>
     <!--/.wrapper-->
+
+    <?php echo $recipes->render(); ?>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">

@@ -37,8 +37,11 @@ class LetsCookController extends BaseController
 
     public function Recipe( $title , $id , $link )
     {
+
+
+
         return view( 'recipe' )->with( 'video_id' , $link )
-            ->with( 'title' , $title  )
+            ->with( 'title' , str_replace( '-' , ' ', $title )  )
             ->with( 'id' , $id  );
 
     }
@@ -46,7 +49,18 @@ class LetsCookController extends BaseController
     public function Recipes( $id )
     {
 
-        return view( 'recipes' );
+        if( $id == 9999 )
+        {
+            $res = Recipe::where( 'how_to_guide', '=', 1 )->paginate( 12 );
+        }
+        else
+        {
+            $res = Recipe::where( 'category', '=', $id )->paginate( 12 );
+        }
+
+
+
+        return view( 'recipes' )->with( 'recipes' , $res );
 
     }
 
