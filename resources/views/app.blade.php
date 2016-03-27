@@ -46,6 +46,8 @@
 
 <body>
 
+
+
 <!--<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -89,6 +91,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li id="home" value="9999"><a href="/home">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
                     <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
@@ -189,15 +192,19 @@
 
 
 
+
+<div class="footer">
+    <p style="color:white">Copyright (c) 2016  Eoghan Gallagher</p>
+</div>
+
+
+
 <script>
 
 
 
     $( function()
     {
-
-        
-
 
         Search();
 
@@ -206,11 +213,7 @@
         LoadPage();
 
 
-
-
-
         //Rating();
-
     });
 
 

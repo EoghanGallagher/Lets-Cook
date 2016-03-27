@@ -39,9 +39,12 @@
         <!--/#two-columns-->
 
 
-            <div id="four-columns" class="grid-container" style="display:block;">
 
-                <ul class="rig columns-4">
+
+
+            <div id="three-columns" class="grid-container" style="display:block;">
+
+                <ul class="rig columns-3">
 
                     @foreach ( $featured as $value )
 

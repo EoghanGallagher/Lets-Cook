@@ -37,7 +37,7 @@
 
 .navbar-default
 {
-    background-color: #c6c6c6;
+    background-color: #32373c;
     border-color: #E7E7E7;
 }
 
@@ -100,5 +100,64 @@
     }
 }
 
+body
+{
+    background-color: #ececec;
+}
+
+.footer
+{
+    background-color: #32373c;
+}
 
 
+.adverts1
+{
+    background-color: white;
+    height:380px;
+    width:300px;
+
+    display: inline-block;
+    padding: 5px;
+    margin: 0 0 2.5% 2.5%;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-size: 1rem;
+
+    vertical-align: top;
+    box-shadow: 0 0 5px #ddd;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.row.less-gutter {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.row.less-gutter [class*='col-']:not(:first-child),
+.row.less-gutter [class*='col-']:not(:last-child) {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 4em;
+}
