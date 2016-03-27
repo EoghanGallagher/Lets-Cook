@@ -30,7 +30,9 @@
 
 .jumbotron
 {
-    height: 100vh;
+    height: 82vh;
+    background-image: url("../img/jumbotron/main-1.jpg");
+    background-size: cover;
 }
 
 .navbar-default
@@ -58,9 +60,9 @@
 
 
 
-
 .dropdown-menu {
     min-width: 200px;
+
 }
 .dropdown-menu.columns-2 {
     min-width: 400px;
