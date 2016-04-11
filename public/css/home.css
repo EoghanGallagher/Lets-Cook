@@ -113,14 +113,43 @@ ul.rig.columns-2 li {
 /* class for 3 columns */
 ul.rig.columns-3 li {
     width: 30.83%; /* this value + 2.5 should = 33% */
-    min-height: 375px;
-    max-height: 375px;
+    min-height: 450px;
+    max-height: 450px;
+
+
+    position:relative;
+
+
+
+
+    /*box-shadow: 2px 2px 1px #888888;*/
 }
+
+
+
+.author-name
+{
+
+    position:absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: medium;
+
+}
+
 /* class for 4 columns */
 ul.rig.columns-4 li {
     width: 22.5%; /* this value + 2.5 should = 25% */
     min-height: 375px;
     max-height: 375px;
+}
+
+ul.rig.columns-4 li.li-wrapper
+{
+    position:absolute;
+    min-height:375px;
+    max-height:375px;
+
 }
 
 @media (max-width: 1199px) {
@@ -148,18 +177,29 @@ ul.rig.columns-4 li {
 }
 
 
+
+
 .description
 {
-    font-size: small;
+    font-size: medium;
     font-weight: 400;
     color: rgba(97, 97, 97, 0.79);
 
 
 }
 
+
+
 .blurb
 {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+
+
+.blurb-text
+{
+    font-size: medium;
 }
 

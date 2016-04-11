@@ -38,8 +38,6 @@ class LetsCookController extends BaseController
     public function Recipe( $title , $id , $link )
     {
 
-
-
         return view( 'recipe' )->with( 'video_id' , $link )
             ->with( 'title' , str_replace( '-' , ' ', $title )  )
             ->with( 'id' , $id  );
@@ -49,9 +47,9 @@ class LetsCookController extends BaseController
     public function Recipes( $id )
     {
 
-        if( $id == 9999 )
+        if( $id == 'How-To-Guide' )
         {
-            $res = Recipe::where( 'how_to_guide', '=', 1 )->paginate( 12 );
+            $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( 12 );
         }
         else
         {
@@ -72,6 +70,18 @@ class LetsCookController extends BaseController
         $recipe->broken_link = true;
 
         $recipe->save();
+
+    }
+
+
+    public function Search( $search )
+    {
+
+        //$res = Recipe::search( $search )->get();
+
+        $res = Recipe::search(  $search , [ 'title' => 20, 'ingredients' => 10 ], true )->paginate( 12 );
+
+        return view( 'recipes' )->with( 'recipes' , $res );
 
     }
 

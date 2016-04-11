@@ -9,13 +9,19 @@
 namespace App;
 
 
-
+use Sofa\Eloquence\Eloquence;
 use Illuminate\Database\Eloquent\Model;
+
 
 
 class Recipe extends Model
 {
 
+
+    use Eloquence;
+
+
+    protected $searchableColumns = ['title', 'ingredients'];
 
     protected $table = 'recipes';
 

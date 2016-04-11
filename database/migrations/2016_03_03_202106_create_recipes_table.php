@@ -21,6 +21,7 @@ class CreateRecipesTable extends Migration
             $table->string( 'title' );
             $table->string( 'link' );
             $table->string( 'thumbnail' );
+            $table->string( 'author' );
             $table->integer( 'region' );
             $table->integer( 'country' );
             $table->integer( 'category' );

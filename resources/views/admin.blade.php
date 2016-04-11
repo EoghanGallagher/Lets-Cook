@@ -1,5 +1,12 @@
 @extends('app')
 
+
+@section( 'title' )
+
+    Lets Cook Admin Page
+
+@endsection
+
 @section('content')
 
     
@@ -49,7 +56,7 @@
 
                     <fieldset class="form-group">
                         <label for="author">Author</label>
-                        <input name="author" class="form-control" id="author" placeholder="">
+                        <input type="text" name="author" class="form-control" id="author" placeholder="">
                     </fieldset>
 
                     <fieldset class="form-group">
@@ -271,6 +278,9 @@
                 skill_level = $( '#skill_level' ).val();
                 content_type = $( '#content_type' ).val();
                 author =  $( '#author' ).val();
+
+                alert( author );
+
                 main_feature = $( '#main_feature' ).val();
               //  published =  $( '#published' ).val();
               //  how_to_guide = $( '#how_to_guide' ).val();
@@ -297,6 +307,7 @@
                         sub_category: sub_category,
                         skill_level: skill_level,
                         content_type: content_type,
+                        author: author,
                         feature: feature,
                         main_feature: main_feature,
                         published: published,

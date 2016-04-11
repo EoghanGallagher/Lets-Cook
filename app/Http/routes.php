@@ -51,6 +51,9 @@ Route::get( 'recipe/{title}/{id}/{link}' , 'LetsCookController@Recipe' );
 Route::get( 'report/{id}' , 'LetsCookController@Report' );
 
 
+Route::get( 'search/{search}' , 'LetsCookController@Search' );
+
+
 
 
 

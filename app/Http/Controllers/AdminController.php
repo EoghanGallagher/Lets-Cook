@@ -44,6 +44,7 @@ class AdminController extends BaseController
             isset($_REQUEST['sub_category']) ||
             isset($_REQUEST['skill_level']) ||
             isset($_REQUEST['content_type']) ||
+            isset($_REQUEST['author']) ||
             isset($_REQUEST['feature']) ||
             isset($_REQUEST['main_feature']) ||
             isset($_REQUEST['published']) ||
@@ -64,6 +65,7 @@ class AdminController extends BaseController
 
             $recipe->skill_level = $_REQUEST['skill_level'];
             $recipe->content_type = $_REQUEST['content_type'];
+            $recipe->author = $_REQUEST['author'];
             $recipe->featured = $_REQUEST['feature'];
             $recipe->main_feature = $_REQUEST['main_feature'];
             $recipe->published = $_REQUEST['published'];

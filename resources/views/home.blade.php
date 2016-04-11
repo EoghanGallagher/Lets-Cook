@@ -1,12 +1,23 @@
 @extends('app')
 
+@section( 'title' )
+
+     Lets Cook - Home
+
+@endsection
+
 @section('content')
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <h1>Lets Cook</h1>
-         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+
+
+        <div id="features-button">
+            <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Show Me Recipes</a></p>
+        </div>
+
     </div>
 </div>
 
@@ -51,13 +62,18 @@
                         <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
 
                             <li>
-                                <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
-                                <h4> {{ $value[ 'title' ] }} </h4>
-                                <div id="rating" class="blurb">
-                                    <input id="input-1" value="4" type="number" class="rating" readonly="true" min=0 max=5 step=0.2 data-size="xs">
+
+                                <div class="li-wrapper">
+
+                                    <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                    <h4> {{ $value[ 'title' ] }} </h4>
+                                    <div id="rating" class="blurb">
+                                        <input id="input-1" value="4" type="number" class="rating" readonly="true" min=0 max=5 step=0.2 data-size="xs">
+                                    </div>
+                                    <span class="description"> {{ $value[ 'description' ]  }} </span>
+                                    <div id="author" class="author-name"><span style="font-style: italic">Author</span> {{ $value[ 'author' ] }}</div>
+
                                 </div>
-                                <span class="description"> {{ $value[ 'description' ]  }} </span>
-                                <div id="author" class="blurb">Author:</div>
 
                             </li>
 

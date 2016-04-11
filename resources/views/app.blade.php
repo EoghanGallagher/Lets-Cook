@@ -9,7 +9,11 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Lets Cook Admin Page</title>
+    <title>
+
+        @yield( 'title' )
+
+    </title>
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -163,20 +167,24 @@
                         </div>
                     </ul>
                 </li>
-                <li id="how_to_guide" value="9999"><a href="#">How To Guides</a></li>
+                <li id="how_to_guide" value="9999"><a href="/recipes/How-To-Guide">How To Guides</a></li>
             </ul>
 
 
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form pull-right">
 
                     <div class="input-group ">
 
-                        <input type="text" class="form-control search" id="search-parameter" placeholder="Find a recipe">
+                        <input type="text" class="form-control search" id="search-parameter" placeholder="Find a recipe" style="width:300px">
                         <div id="search-button" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
 
                     </div>
 
+
+
                 </form>
+
+
 
 
         </div><!--/.nav-collapse -->
@@ -194,7 +202,7 @@
 
 
 <div class="footer">
-    <p style="color:white">Copyright (c) 2016  Eoghan Gallagher</p>
+    <div class="footer-text" style="color:#b5b5b5">Copyright (c) 2016  Eoghan Gallagher</div>
 </div>
 
 
@@ -221,11 +229,39 @@
     function Search()
     {
 
+        var l = window.location;
+        var base_url = l.protocol + "//" + l.host + "/" ;
+
+        var url = base_url + 'search/';
+
         $( "#search-button" ).click(function()
         {
-            alert( $( '#search-parameter').val() );
+            id = $( "#search-parameter" ).val();
+
+            if( id == '' )
+            {
+
+            }
+            else
+            {
+
+                window.location.replace( url + id );
+            }
 
         });
+
+
+        $( '#search-parameter' ).keydown(function ( e )
+        {
+            if( e.keyCode == 13 )
+            {
+                id = $( "#search-parameter" ).val();
+
+                window.location.replace( url + id );
+
+            }
+
+        })
 
     }
 
@@ -259,12 +295,7 @@
 
         })
 
-        $( "#how_to_guide").click( function() {
 
-            id = $( this ).val();
-            window.location.replace( url + id );
-
-        });
     }
 
 
