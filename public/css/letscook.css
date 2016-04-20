@@ -4,10 +4,20 @@
     margin-top: 40px;
 }
 
+.recipe-container
+{
+    margin-top:10px;
+
+
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
+    margin:5px;
+
+
 }
 
 .video-container iframe,
@@ -124,8 +134,8 @@ body
 .adverts1
 {
     background-color: white;
-    height:350px;
-    width:350px;
+    height:300px;
+    width:300px;
 
     display: inline-block;
     padding: 5px;
@@ -140,6 +150,7 @@ body
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+
 }
 
 .row.less-gutter {
@@ -152,8 +163,6 @@ body
     padding-right: 5px;
     padding-left: 5px;
 }
-
-
 
 
 * {
@@ -183,3 +192,5 @@ html, body {
     padding-left:4%;
 
 }
+
+

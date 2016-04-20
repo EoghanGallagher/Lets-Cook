@@ -38,9 +38,14 @@ class LetsCookController extends BaseController
     public function Recipe( $title , $id , $link )
     {
 
+
+        $res = Recipe::where( 'id' , $id )->get();
+
+
         return view( 'recipe' )->with( 'video_id' , $link )
             ->with( 'title' , str_replace( '-' , ' ', $title )  )
-            ->with( 'id' , $id  );
+            ->with( 'id' , $id  )
+            ->with( 'res' , $res );
 
     }
 
@@ -79,7 +84,7 @@ class LetsCookController extends BaseController
 
         //$res = Recipe::search( $search )->get();
 
-        $res = Recipe::search(  $search , [ 'title' => 20, 'ingredients' => 10 ], true )->paginate( 12 );
+        $res = Recipe::search(  $search , [ 'title' => 20, 'ingredients' => 10 , 'author' => 5 ], true )->orderBy( 'title' )->paginate( 12 );
 
         return view( 'recipes' )->with( 'recipes' , $res );
 

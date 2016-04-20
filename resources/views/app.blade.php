@@ -253,11 +253,23 @@
 
         $( '#search-parameter' ).keydown(function ( e )
         {
+
             if( e.keyCode == 13 )
             {
+                e.preventDefault();
+
                 id = $( "#search-parameter" ).val();
 
-                window.location.replace( url + id );
+                if( id == '')
+                {
+
+                }
+                else
+                {
+                    window.location.replace( url + id );
+                }
+
+
 
             }
 

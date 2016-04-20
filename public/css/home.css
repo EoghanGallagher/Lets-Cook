@@ -185,7 +185,6 @@ ul.rig.columns-4 li.li-wrapper
     font-weight: 400;
     color: rgba(97, 97, 97, 0.79);
 
-
 }
 
 
@@ -203,3 +202,61 @@ ul.rig.columns-4 li.li-wrapper
     font-size: medium;
 }
 
+.recipe-div
+{
+
+    background-color: white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+    margin-top: 75px;
+
+}
+
+#recipe-title
+{
+
+    margin-top:10px;
+    margin-left:5px;
+
+
+
+}
+
+#recipe-rating
+{
+
+    margin-top:10px;
+    margin-left:5px;
+
+}
+
+#recipe-description
+{
+    margin-top:10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+#recipe-ingredients
+{
+    margin-top:10px;
+    padding-left: 50px;
+    margin-left:5px;
+}
+
+.recipe-list
+{
+
+    list-style-image: url('sqpurple.gif');
+
+}
+
+#recipe-instructions
+{
+    margin-top:10px;
+    margin-left:5px;
+    margin-right:5px;
+}
