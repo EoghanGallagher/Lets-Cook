@@ -91,7 +91,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Lets Cook Logo</a>
+            <a class="navbar-brand " href="#"><span class="overstated">lets</span><span class="overstated2">cook!</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -167,7 +167,83 @@
                         </div>
                     </ul>
                 </li>
+                <li id="world_food" value="9999">
+
+
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">World Food <span class="caret"></span></a>
+                    <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="1"><a href="#">American</a></li>
+                                    <li class="divider"></li>
+                                    <li value="2"><a href="#">Argentinian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="3"><a href="#">Armenian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="4"><a href="#">Austrailian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="5"><a href="#">Austrian</a></li>
+                                    <li class="divider"></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="6"><a href="#">Basque</a></li>
+                                    <li class="divider"></li>
+                                    <li value="8"><a href="#">Belgian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="9"><a href="#">Brazillian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="10"><a href="#">British</a></li>
+                                    <li class="divider"></li>
+                                    <li value="11"><a href="#">Burmese</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="14"><a href="#">Cajun</a></li>
+                                    <li class="divider"></li>
+                                    <li value="15"><a href="#">Canadian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="16"><a href="#">Caribbean</a></li>
+                                    <li class="divider"></li>
+                                    <li value="17"><a href="#">Chinese</a></li>
+                                    <li class="divider"></li>
+                                    <li value="18"><a href="#">Colombian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Croation</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Czech</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <ul class="multi-column-dropdown">
+                                    <li value="20"><a href="#">Side Dishes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="21"><a href="#">Soups</a></li>
+                                    <li class="divider"></li>
+                                    <li value="22"><a href="#">Stews</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Chili</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </ul>
+
+
+                </li>
                 <li id="how_to_guide" value="9999"><a href="/recipes/How-To-Guide">How To Guides</a></li>
+
+
             </ul>
 
 

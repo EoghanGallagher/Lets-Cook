@@ -11,7 +11,7 @@
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Lets Cook</h1>
+
 
 
         <div id="features-button">
@@ -22,7 +22,7 @@
 </div>
 
 <div class="wrapper">
-    <div class="container">
+    <div class="container" style="margin-top: 20px">
         <h1>Latest Recipes</h1>
        <!-- <ul class="grid-nav">
             <li><a href="#" data-id="two-columns" >2 Columns</a></li>

@@ -35,9 +35,9 @@
                 <!--/#two-columns-->
 
 
-                <div id="four-columns" class="grid-container" style="display:block;">
+                <div id="three-columns" class="grid-container" style="display:block;">
 
-                    <ul class="rig columns-4">
+                    <ul class="rig columns-3">
 
 
                         @foreach ( $recipes as $value )
