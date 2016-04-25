@@ -8,19 +8,38 @@ body {
     font-weight: 200;
 }
 
-h1 {
+/* h1 {
     font-family: 'Helvetica Neue', arial, sans-serif;
     font-weight: 800;
 
     margin: 0 0 20px;
 
+
     color: #32373c;
+}*/
+
+h2
+{
+    font-family:Georgia;
+    font-style: italic;
+    font-size: 42px;
+    color:#1e282f;
+    text-transform:none;
+    text-align:center;
+    font-weight:100;
+    letter-spacing:1px;
+    padding-bottom: 10px;
 }
+
 
 h4
 {
+    font-family:Georgia;
     color: #454545;
     text-align: left;
+    margin-top: 10px;
+
+    font-style: italic;
 }
 
 
@@ -31,8 +50,11 @@ hr {
     margin: 25px 0;
     clear: both;
 }
-.centered {
+.centered
+{
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .wrapper {
     width: 100%;
@@ -78,15 +100,15 @@ ul.rig {
 }
 ul.rig li {
     display: inline-block;
-    padding: 5px;
+    padding: 0px;
     margin: 0 0 2.5% 2.5%;
     background: #fff;
-    border: 1px solid #ddd;
+  /*  border: 0px solid #ddd;*/
     font-size: 16px;
     font-size: 1rem;
 
     vertical-align: top;
-    box-shadow: 0 0 5px #ddd;
+    box-shadow: 0 0 0px #ddd;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -95,7 +117,7 @@ ul.rig li img {
     max-width: 100%;
     min-width: 100%;
     height: auto;
-    margin: 0 0 10px;
+    margin: 0 0 0px;
 }
 ul.rig li h3 {
     margin: 0 0 5px;
@@ -113,19 +135,20 @@ ul.rig.columns-2 li {
 /* class for 3 columns */
 ul.rig.columns-3 li {
     width: 30.83%; /* this value + 2.5 should = 33% */
-    min-height: 450px;
-    max-height: 450px;
-
-
     position:relative;
 
-
+    background-color: transparent;
 
 
     /*box-shadow: 2px 2px 1px #888888;*/
 }
 
+#three-columns
+{
+    width:90%;
+    display:block;
 
+}
 
 .author-name
 {
@@ -140,15 +163,13 @@ ul.rig.columns-3 li {
 /* class for 4 columns */
 ul.rig.columns-4 li {
     width: 22.5%; /* this value + 2.5 should = 25% */
-    min-height: 375px;
-    max-height: 375px;
+
 }
 
 ul.rig.columns-4 li.li-wrapper
 {
     position:absolute;
-    min-height:375px;
-    max-height:375px;
+
 
 }
 
@@ -166,6 +187,7 @@ ul.rig.columns-4 li.li-wrapper
     }
     ul.grid-nav li a {
         display: block;
+
     }
     ul.rig {
         margin-left: 0;
@@ -259,4 +281,17 @@ ul.rig.columns-4 li.li-wrapper
     margin-top:10px;
     margin-left:5px;
     margin-right:5px;
+}
+
+.subtitle
+{
+    font-family:Arial,Montserrat,Georgia,serif;
+    font-size:14px;
+    color:#a3865b;
+    text-transform:uppercase;
+    text-align:center;
+    font-weight:700;
+    letter-spacing:2px;
+    display:block;
+    margin-top:5px
 }

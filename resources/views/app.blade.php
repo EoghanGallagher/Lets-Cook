@@ -91,7 +91,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#"><span class="overstated">lets</span><span class="overstated2">cook!</span></a>
+            <a class="navbar-brand " href="#"><span class="overstated2">lets</span><span class="overstated">cook!</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -167,15 +167,13 @@
                         </div>
                     </ul>
                 </li>
-                <li id="world_food" value="9999">
-
-
+                <li id="dropdown" value="9999">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">World Food <span class="caret"></span></a>
-                    <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
+                    <ul class="dropdown-menu multi-column columns-3" id="world-dropdown">
 
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <ul class="multi-column-dropdown">
                                     <li value="1"><a href="#">American</a></li>
                                     <li class="divider"></li>
@@ -187,25 +185,22 @@
                                     <li class="divider"></li>
                                     <li value="5"><a href="#">Austrian</a></li>
                                     <li class="divider"></li>
-
-                                </ul>
-                            </div>
-                            <div class="col-sm-3">
-                                <ul class="multi-column-dropdown">
                                     <li value="6"><a href="#">Basque</a></li>
                                     <li class="divider"></li>
                                     <li value="8"><a href="#">Belgian</a></li>
                                     <li class="divider"></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-2">
+                                <ul class="multi-column-dropdown">
+
                                     <li value="9"><a href="#">Brazillian</a></li>
                                     <li class="divider"></li>
                                     <li value="10"><a href="#">British</a></li>
                                     <li class="divider"></li>
                                     <li value="11"><a href="#">Burmese</a></li>
                                     <li class="divider"></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-3">
-                                <ul class="multi-column-dropdown">
                                     <li value="14"><a href="#">Cajun</a></li>
                                     <li class="divider"></li>
                                     <li value="15"><a href="#">Canadian</a></li>
@@ -214,24 +209,65 @@
                                     <li class="divider"></li>
                                     <li value="17"><a href="#">Chinese</a></li>
                                     <li class="divider"></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-2">
+                                <ul class="multi-column-dropdown">
+
                                     <li value="18"><a href="#">Colombian</a></li>
                                     <li class="divider"></li>
                                     <li value="19"><a href="#">Croation</a></li>
                                     <li class="divider"></li>
                                     <li value="19"><a href="#">Czech</a></li>
                                     <li class="divider"></li>
+                                    <li value="19"><a href="#">Danish</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Dutch</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Egyption</a></li>
+                                    <li class="divider"></li>
+                                    <li value="19"><a href="#">Eskimo</a></li>
+                                    <li class="divider"></li>
+
+
                                 </ul>
                             </div>
 
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <ul class="multi-column-dropdown">
-                                    <li value="20"><a href="#">Side Dishes</a></li>
+                                    <li value="19"><a href="#">Ethiopian</a></li>
                                     <li class="divider"></li>
-                                    <li value="21"><a href="#">Soups</a></li>
+                                    <li value="21"><a href="#">Filipino</a></li>
                                     <li class="divider"></li>
-                                    <li value="22"><a href="#">Stews</a></li>
+                                    <li value="22"><a href="#">Finnish</a></li>
                                     <li class="divider"></li>
-                                    <li value="23"><a href="#">Chili</a></li>
+                                    <li value="23"><a href="#">French</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">German</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Greek</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Hawaiian</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <ul class="multi-column-dropdown">
+                                    <li value="19"><a href="#">Ethiopian</a></li>
+                                    <li class="divider"></li>
+                                    <li value="21"><a href="#">Filipino</a></li>
+                                    <li class="divider"></li>
+                                    <li value="22"><a href="#">Finnish</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">French</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">German</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Greek</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Hawaiian</a></li>
                                     <li class="divider"></li>
                                 </ul>
                             </div>
@@ -260,14 +296,16 @@
 
                 </form>
 
-
-
-
         </div><!--/.nav-collapse -->
 
 
     </div>
+
 </nav>
+
+<div style="padding-bottom: 15px;"></div>
+<div class="line-seperator-jumbotron"></div>
+
 
 
 
@@ -276,7 +314,7 @@
 
 
 
-
+<div class="line-seperator-jumbotron"></div>
 <div class="footer">
     <div class="footer-text" style="color:#b5b5b5">Copyright (c) 2016  Eoghan Gallagher</div>
 </div>
