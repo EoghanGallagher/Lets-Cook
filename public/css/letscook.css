@@ -248,7 +248,29 @@ html, body {
 }
 
 
-.nav.navbar-nav.navbar-right li a {
-    color: blue;
+.navbar-collapse .collapse
+{
+    background-color: white;
 }
+
+.view-more-div
+{
+    width:200px;
+    height:50px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #8d7143;
+
+    postion:relative
+}
+
+.view-more-content
+{
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+
 

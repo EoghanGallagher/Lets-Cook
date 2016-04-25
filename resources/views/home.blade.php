@@ -71,12 +71,19 @@
 
                 </ul>
 
-     <br/>
-     <br/>
+
 
 
 
             </div>
+
+        <div class="view-more-div centered">
+
+            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+
+        </div>
+        <br/>
+        <br/>
 
 
             <div class="centered">{{  $featured->links()  }}</div>
@@ -113,7 +120,7 @@
 
     <div class="line-separator"></div>
 
-    <div class="container-fluid" style="margin-top: 0px; background-color:rgba(172, 172, 172, 0.15);">
+    <div class="container-fluid" style="margin-top: 0px; background-color:rgba(168, 136, 78, 0.15);">
 
 
 
@@ -158,6 +165,15 @@
         </div>
 
 
+        <div class="view-more-div centered">
+
+            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+
+        </div>
+
+        <br/>
+        <br/>
+
     </div>
 
     <div class="line-separator"></div>
@@ -200,6 +216,11 @@
                 @endforeach
 
             </ul>
+
+        </div>
+        <div class="view-more-div centered">
+
+            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
         </div>
         <br/>
