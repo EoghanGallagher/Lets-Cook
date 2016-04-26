@@ -11,15 +11,17 @@
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
+
     <div class="container">
 
+        <video id="video-background"preload muted autoplay loop>
 
+            <source src="video/food-background(2).webm" type="video/webm">
 
-        <div id="features-button">
-            <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Show Me Recipes</a></p>
-        </div>
+        </video>
 
     </div>
+
 
 </div>
 
@@ -53,7 +55,7 @@
 
                                 <div class="li-wrapper">
 
-                                    <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                    <img class="image-border" src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
 
                                 </div>
                                 <br/>
@@ -114,6 +116,7 @@
         <br/>
         <br/>
 
+
     </div>
     <!--/.container-->
 
@@ -144,7 +147,7 @@
 
                             <div class="li-wrapper">
 
-                                <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                <img class="image-border" src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg"  />
 
                             </div>
                             <br/>
@@ -170,7 +173,8 @@
             <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
         </div>
-
+<br/>
+        <br/>
         <br/>
         <br/>
 
@@ -201,7 +205,7 @@
 
                             <div class="li-wrapper">
 
-                                <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                <img class="image-border" src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
 
                             </div>
                             <br/>
@@ -223,10 +227,15 @@
             <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
         </div>
-        <br/>
-        <br/>
-        <br/>
+
+
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
 </div>
 <!--/.wrapper-->
@@ -245,7 +254,16 @@
             $('.grid-nav li a').removeClass("active");
             $(this).addClass("active");
         });
+
+        $('video').on('ended', function () {
+
+            alert( 'Over' );
+            this.load();
+            this.play();
+        });
     });
+
+
 </script>
 
 

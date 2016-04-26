@@ -54,11 +54,11 @@ class LetsCookController extends BaseController
 
         if( $id == 'How-To-Guide' )
         {
-            $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( 12 );
+            $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( 3 );
         }
         else
         {
-            $res = Recipe::where( 'category', '=', $id )->paginate( 12 );
+            $res = Recipe::where( 'category', '=', $id )->paginate( 3 );
         }
 
 

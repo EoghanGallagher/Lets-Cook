@@ -6,20 +6,20 @@
 
     <div class="wrapper">
         <div class="container">
-            <h1>Recipes</h1>
+            <br/>
+            <h2 class="centered">Recipes</h2>
+            <br/>
+
+
             <!-- <ul class="grid-nav">
                  <li><a href="#" data-id="two-columns" >2 Columns</a></li>
                  <li><a href="#" data-id="three-columns" class="active">3 Columns</a></li>
                  <li><a href="#" data-id="four-columns">4 Columns</a></li>
              </ul>-->
 
-            <hr />
-
-
-
             @if( sizeof( $recipes ) ===  0 )
 
-                <p>No Records</p>
+                <h2 class="centered">No Matches Found</h2>
 
 
             @else
@@ -35,7 +35,7 @@
                 <!--/#two-columns-->
 
 
-                <div id="three-columns" class="grid-container" style="display:block;">
+                <div id="three-columns" class="grid-container centered" style="display:block;">
 
                     <ul class="rig columns-3">
 
@@ -51,9 +51,15 @@
                             <a href="/recipe/{{ str_replace( ' ' , '-',  trim( $link_title ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
 
                                 <li>
-                                    <img src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
-                                    <h3> {{ $value[ 'title' ]}} </h3>
-                                    <p> {{ $value[ 'description' ]  }} </p>
+
+                                    <div class="li-wrapper">
+
+                                        <img class="image-border" src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+
+                                    </div>
+                                    <br/>
+                                    <h4 class="centered"> {{ $value[ 'title' ]}} </h4>
+
                                 </li>
 
                             </a>
@@ -71,23 +77,24 @@
             <!--  <div id="four-columns" class="grid-container">
             <ul class="rig columns-4">
 
-
-
                     </ul>
                 </div> -->
             <!--/#four-columns-->
-
-            <hr />
-
-
-        </div>
+       </div>
         <!--/.container-->
-
 
     </div>
     <!--/.wrapper-->
 
-    <?php echo $recipes->render(); ?>
+
+    <div class="centered">
+
+        <?php echo $recipes->render(); ?>
+    </div>
+
+    <br/>
+    <br/>
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
