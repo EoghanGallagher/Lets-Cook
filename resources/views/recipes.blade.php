@@ -44,7 +44,7 @@
 
                             <?php
 
-                            $link_title = $value[ 'title' ];
+                                $link_title = $value[ 'title' ];
 
                             ?>
 

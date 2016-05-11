@@ -315,7 +315,16 @@
 
 <div class="line-seperator-jumbotron"></div>
 <div class="footer">
-    <div class="footer-text" style="color:#b5b5b5">Copyright (c) 2016  Eoghan Gallagher</div>
+
+    <div>
+        <span>--------</span>
+    </div>
+
+    <div class="footer-text" style="color:#b5b5b5; ">
+
+        Copyright (c) 2016  TimTam Web Designs
+
+    </div>
 </div>
 
 
@@ -338,7 +347,17 @@
     });
 
 
+    /*
 
+        Search Function
+
+        Read user input
+
+        Build Search url using user input
+
+        Redirect to Search url
+
+    */
     function Search()
     {
 
@@ -414,6 +433,7 @@
 
         $( "#main-dropdown li" ).click(function()
         {
+
             id = $( this ).val();
 
             window.location.replace( url + id );

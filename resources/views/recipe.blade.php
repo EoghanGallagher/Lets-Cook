@@ -2,7 +2,7 @@
 
 @section('content')
 
-<<div class="container-fluid">
+<div class="container-fluid">
         <div class="row less-gutter"  >
 
 
@@ -54,32 +54,43 @@
 
                         @endif
 
-
-
                         <br/>
 
-                        <div style="margin-left: 5px;">
+                        @if( $res[0]->ingredients != "" )
 
-                            <h4>Ingredients</h4>
 
-                        </div>
+                            <?
+                                $ingredients = explode( PHP_EOL , $res[0]->ingredients );
+                            ?>
 
-                        <div id="recipe-ingredients">
 
-                            <ul>
+                            <div style="margin-left: 5px;">
 
-                                <li>One</li>
-                                <li>Two</li>
-                                <li>Three</li>
-                                <li>Four</li>
-                                <li>Five</li>
-                                <li>Six</li>
-                                <li>Seven</li>
-                                <li>Eight</li>
+                                <h4>Ingredients</h4>
 
-                            </ul>
+                            </div>
 
-                        </div>
+
+
+                            <div id="recipe-ingredients">
+
+                                <ul>
+
+                                    @foreach ( $ingredients as $value )
+
+                                        @if( !empty( $value  )  )
+
+                                            <li>{{ $value }}</li>
+
+                                        @endif
+
+                                    @endforeach
+
+                                </ul>
+
+                            </div>
+
+                        @endif
 
                         <br/>
 
@@ -91,7 +102,7 @@
 
                         <div id="recipe-instructions">
 
-                            <p>TEST{{ $res[0]->description }}</p>
+                            <p>{{ $res[0]->instructions }}</p>
 
                         </div>
 

@@ -28,9 +28,27 @@ class LetsCookController extends BaseController
 
         $str_to_find = 'v=';
 
-        $res = Recipe::where( 'featured', '=', 1 )->paginate( 9 );
+        $res = Recipe::where( 'featured', '=', 1 )
+            ->orderBy( 'title' )
+            ->get();
 
-        return view( 'home' )->with( 'featured' , $res );
+
+        $tuts = Recipe::where( 'how_to_guide' , '=' , 1 )
+            ->orderBy( 'title' )
+            ->take( 3 )
+            ->get();
+
+
+        $desserts = Recipe::where( 'category' , '=',  5  )
+            ->orderBy( 'title' )
+            ->take( 3 )
+            ->get();
+
+
+
+        return view( 'home' )->with( 'featured' , $res )
+            ->with( 'tutorials' , $tuts )
+            ->with( 'desserts' , $desserts );
 
     }
 
@@ -52,7 +70,13 @@ class LetsCookController extends BaseController
     public function Recipes( $id )
     {
 
-        if( $id == 'How-To-Guide' )
+        if( $id == 'all' )
+        {
+
+            $res = Recipe::where( 'published', '=' , 1 )->paginate( 12 );
+
+        }
+        else if( $id == 'How-To-Guide' )
         {
             $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( 3 );
         }

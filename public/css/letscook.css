@@ -11,12 +11,12 @@
 
 }
 
-.video-container {
+.video-container
+{
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
     margin:5px;
-
 
 }
 
@@ -40,7 +40,7 @@
 
 .jumbotron
 {
-    height:80vh;
+    height:100vh;
     overflow: hidden;
     background-size: cover;
     position:relative;
@@ -207,13 +207,19 @@ html, body {
     height: 5em;
 
 
+
+
 }
 
 .footer-text
 {
+    margin: 0 auto;
+    border:solid;
+    border-color: #E7E7E7;
+    width:30%;
+    padding-top: 0%;
+    text-align: center;
 
-    padding-top: 2%;
-    padding-left:4%;
 
 }
 
@@ -242,7 +248,7 @@ html, body {
 
 .line-seperator-jumbotron
 {
-    height:4px;
+    height:2px;
 
     background: #8d7143;
 
@@ -286,6 +292,11 @@ html, body {
     text-align: center;
     vertical-align: middle;
     line-height: 40px;
+}
+
+.view-more-link
+{
+    text-decoration: none;
 }
 
 

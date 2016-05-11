@@ -61,11 +61,7 @@
                                 <br/>
                                 <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
 
-
-
                             </li>
-
-
 
                         </a>
 
@@ -73,17 +69,20 @@
 
                 </ul>
 
+            </div>
 
 
+        <a href="recipes/all" style="text-decoration: none">
 
+            <div class="view-more-div centered">
+
+                <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
             </div>
 
-        <div class="view-more-div centered">
+        </a>
 
-            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
-        </div>
         <br/>
         <br/>
 
@@ -125,13 +124,13 @@
 
     <div class="container-fluid" style="margin-top: 0px; background-color:rgba(168, 136, 78, 0.15);">
 
+        <br/>
+        <br/>
+        <br/>
 
-
-        <br/>
-        <br/>
-        <br/>
         <h2 class="centered">Learn to Cook</h2>
         <h4 class="centered subtitle">The best cooking tutorials</h4>
+
         <br/>
         <br/>
 
@@ -139,7 +138,7 @@
 
             <ul class="rig columns-3">
 
-                @foreach ( $featured as $value )
+                @foreach ( $tutorials as $value )
 
                     <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
 
@@ -152,8 +151,6 @@
                             </div>
                             <br/>
                             <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
-
-
 
                         </li>
 
@@ -173,7 +170,8 @@
             <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
         </div>
-<br/>
+
+        <br/>
         <br/>
         <br/>
         <br/>
@@ -197,7 +195,7 @@
 
             <ul class="rig columns-3">
 
-                @foreach ( $featured as $value )
+                @foreach ( $desserts as $value )
 
                     <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
 
@@ -212,9 +210,6 @@
                             <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
 
                         </li>
-
-
-
                     </a>
 
                 @endforeach
