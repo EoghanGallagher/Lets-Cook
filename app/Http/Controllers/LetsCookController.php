@@ -28,32 +28,34 @@ class LetsCookController extends BaseController
 
         $str_to_find = 'v=';
 
-        $res = Recipe::where( 'featured', '=', 1 )
+        $featured = Recipe::where( 'featured', '=', 1 )
             ->orderBy( 'title' )
+            ->take( 6 )
             ->get();
+
 
 
         $tuts = Recipe::where( 'how_to_guide' , '=' , 1 )
             ->orderBy( 'title' )
-            ->take( 3 )
+            ->take( 21 )
             ->get();
 
 
         $desserts = Recipe::where( 'category' , '=',  5  )
             ->orderBy( 'title' )
-            ->take( 3 )
+            ->take( 21 )
             ->get();
 
 
 
-        return view( 'home' )->with( 'featured' , $res )
+        return view( 'home' )->with( 'featured' , $featured )
             ->with( 'tutorials' , $tuts )
             ->with( 'desserts' , $desserts );
 
     }
 
 
-    public function Recipe( $title , $id , $link )
+    public function Recipe( $id , $title , $link )
     {
 
 
@@ -70,22 +72,22 @@ class LetsCookController extends BaseController
     public function Recipes( $id )
     {
 
+        $pagination = 21;
+
         if( $id == 'all' )
         {
 
-            $res = Recipe::where( 'published', '=' , 1 )->paginate( 12 );
+            $res = Recipe::where( 'published', '=' , 1 )->paginate( $pagination );
 
         }
         else if( $id == 'How-To-Guide' )
         {
-            $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( 3 );
+            $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( $pagination );
         }
         else
         {
-            $res = Recipe::where( 'category', '=', $id )->paginate( 3 );
+            $res = Recipe::where( 'category', '=', $id )->paginate( $pagination );
         }
-
-
 
         return view( 'recipes' )->with( 'recipes' , $res );
 

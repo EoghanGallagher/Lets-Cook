@@ -22,7 +22,6 @@
 
     </div>
 
-
 </div>
 
      <div class="line-seperator-jumbotron"></div>
@@ -49,7 +48,7 @@
 
                     @foreach ( $featured as $value )
 
-                        <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
+                        <a href="recipe/{{  $value[ 'id' ]   }}/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) )  }}/{{ $value[ 'link' ] }}">
 
                             <li>
 
@@ -87,7 +86,7 @@
         <br/>
 
 
-            <div class="centered">{{  $featured->links()  }}</div>
+
 
 
         <!--/#three-columns-->
@@ -140,7 +139,7 @@
 
                 @foreach ( $tutorials as $value )
 
-                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
+                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'id' ] ) ) }}/{{  $value[ 'title' ]  }}/{{ $value[ 'link' ] }}">
 
                         <li>
 
@@ -197,7 +196,7 @@
 
                 @foreach ( $desserts as $value )
 
-                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}/{{  $value[ 'id' ]  }}/{{ $value[ 'link' ] }}">
+                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'id' ] ) ) }}/{{  $value[ 'title' ]  }}/{{ $value[ 'link' ] }}">
 
                         <li>
 

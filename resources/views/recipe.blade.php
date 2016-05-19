@@ -1,5 +1,13 @@
 @extends('app')
 
+@section( 'meta' )
+
+    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+    <meta name="description" content="TEST">
+    <meta name="author" content="test">
+
+@endsection
+
 @section('content')
 
 <div class="container-fluid">
@@ -32,8 +40,11 @@
                         <div id="recipe-title">
 
                             <h3>{{ $title }}</h3>
+                            <div><span class="signature">by {{ $res[0]->author }}</span></div>
 
                         </div>
+
+                        <br/>
 
 
                         <div id="recipe-rating">
@@ -47,7 +58,7 @@
 
                             <div id="recipe-description">
 
-                                <p>{{ $res[0]->description }}</p>
+                                {{  $res[0]->description  }}
 
                             </div>
 
@@ -74,13 +85,13 @@
 
                             <div id="recipe-ingredients">
 
-                                <ul>
+                                <ul style="list-style: none;">
 
                                     @foreach ( $ingredients as $value )
 
                                         @if( !empty( $value  )  )
 
-                                            <li>{{ $value }}</li>
+                                            <li style="font-weight: 600; font-style: italic">{{ $value }}</li>
 
                                         @endif
 
@@ -100,9 +111,30 @@
 
                         </div>
 
-                        <div id="recipe-instructions">
+                        <div id="recipe-ingredients">
 
-                            <p>{{ $res[0]->instructions }}</p>
+
+
+                            <?
+                                $instructions = explode( PHP_EOL , $res[0]->instructions );
+                            ?>
+
+
+                                <ol>
+
+                                    @foreach ( $instructions as $value )
+
+                                        @if( !empty( $value  )  )
+
+                                            <li style="font-weight: 500; font-style: italic">{{ $value }}</li>
+
+                                        @endif
+
+                                    @endforeach
+
+                                </ol>
+
+
 
                         </div>
 
@@ -118,6 +150,8 @@
 
                 <div class="col-sm-2">
 
+
+                    <div class="recipe-container">
 
                     <div class="adverts1" style="margin-top: 75px; margin-left: 15px;">
 
@@ -146,6 +180,7 @@
 
 
 
+                </div>
                 </div>
 
             </div>

@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+   
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+
+
+    @yield( 'meta' )
+
+
     <link rel="icon" href="../../favicon.ico">
 
     <title>
@@ -45,6 +51,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -168,8 +175,8 @@
                 </li>
                 <li id="dropdown" value="9999">
 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">World Food <span class="caret"></span></a>
-                    <ul class="dropdown-menu multi-column columns-3" id="world-dropdown">
+                    <a href="#" style="display:none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">World Food <span class="caret"></span></a>
+                    <ul class="dropdown-menu multi-column columns-3" id="world-dropdown" style="display:none">
 
                         <div class="row">
                             <div class="col-sm-2">
@@ -316,15 +323,25 @@
 <div class="line-seperator-jumbotron"></div>
 <div class="footer">
 
-    <div>
-        <span>--------</span>
-    </div>
+    <br/>
 
     <div class="footer-text" style="color:#b5b5b5; ">
 
-        Copyright (c) 2016  TimTam Web Designs
+        <div style="width:190px; " class="centered">
+            <div style="float:left; width:60px"><img src="/img/facebook.png" alt="Facebook" class="icons" ></div>
+            <div style="float:left; width:60px"><img src="/img/twitter3.png" alt="Twitter" class="icons" ></div>
+            <div style="float:left; width:60px"><img src="/img/instagram.png" alt="Instagram" class="icons" ></div>
+            <div style="clear:both"></div>
+        </div>
+
+        <br/>
+
+        <h4 class="signature centered">© 2016 TimTam Web Design</h4>
 
     </div>
+
+    <br/>
+
 </div>
 
 
@@ -415,7 +432,6 @@
 
         $( "#browse" ).click(function()
         {
-
             alert( 'Browse Clicked' );
 
         });

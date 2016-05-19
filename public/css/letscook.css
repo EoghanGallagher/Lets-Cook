@@ -125,7 +125,7 @@
     display: block;
     clear: both;
     line-height: 1.428571429;
-    color: #333;
+    color: #8d7143;
     white-space: normal;
 }
 .multi-column-dropdown li a:hover {
@@ -204,9 +204,7 @@ html, body {
 .footer, .push
 {
 
-    height: 5em;
-
-
+    height: auto;
 
 
 }
@@ -214,7 +212,7 @@ html, body {
 .footer-text
 {
     margin: 0 auto;
-    border:solid;
+
     border-color: #E7E7E7;
     width:30%;
     padding-top: 0%;
@@ -302,6 +300,14 @@ html, body {
 
 /* Navbar Menu items */
 
+.navbar-inverse
+{
+
+    background-color: #32373C;
+
+}
+
+
 .navbar-inverse .navbar-nav > li > a
 {
     font-family:Arial,Montserrat,Georgia,serif;
@@ -312,6 +318,7 @@ html, body {
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 
     color: #cba65c;
+
 }
 
 ul.pagination li a

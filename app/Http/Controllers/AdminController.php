@@ -57,7 +57,7 @@ class AdminController extends BaseController
             $recipe->link = $_REQUEST['link'];
             $recipe->description = $_REQUEST['description'];
             $recipe->ingredients = $_REQUEST['ingredients'];
-            $recipe->instructions = $_REQUEST['instructions'];
+            $recipe->instructions =  $_REQUEST['instructions'];
 
             $recipe->region = $_REQUEST['region'];
             $recipe->country = $_REQUEST['country'];
@@ -73,12 +73,29 @@ class AdminController extends BaseController
 
 
 
+
             $link = $recipe->link;
 
-            parse_str( parse_url( $link, PHP_URL_QUERY ), $my_array_of_vars );
+
+            //Check if recipe is video or text
+            if( $recipe->content_type === 'video')
+            {
+
+                parse_str( parse_url( $link, PHP_URL_QUERY ), $recipe_link );
 
 
-            $recipe->link = $my_array_of_vars['v'];
+                if( $recipe_link )
+                {
+
+                    $recipe->link = $recipe_link['v'];
+                }
+
+            }
+            else
+            {
+                echo 'Text';
+
+            }
 
 
             $res = $recipe->save();

@@ -9,7 +9,8 @@
 
 @section('content')
 
-    
+
+
     <div class="container">
         <!-- Example row of columns -->
 
@@ -178,6 +179,7 @@
 
         function SaveRecipe()
         {
+
             $( "#btn_save" ).click(function()
             {
                 var url = 'article'
@@ -279,7 +281,6 @@
                 content_type = $( '#content_type' ).val();
                 author =  $( '#author' ).val();
 
-                alert( author );
 
                 main_feature = $( '#main_feature' ).val();
               //  published =  $( '#published' ).val();
@@ -323,10 +324,13 @@
                     dataType : 'json',
                     success: function( data )
                     {
-                        //alert( data );
+                        alert( 'Recipe Saved Successfully' );
                         console.log( 'Response OK ' + data );
+
+                        $( '#recipes' ).trigger( 'reset' );
+
                     },
-                    type: 'GET'
+                    type: 'POST'
 
                 });
 

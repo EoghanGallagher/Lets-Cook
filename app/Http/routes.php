@@ -38,14 +38,14 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::get( 'admin' , 'AdminController@LoadAdmin'  );
 
-Route::get( 'article' , 'AdminController@AddArticle' );
+Route::post( 'article' , 'AdminController@AddArticle' );
 Route::get( 'populate' , 'AdminController@PopulateTables' );
 
 
 
 Route::get( 'home' , 'LetsCookController@Home' );
 Route::get( 'recipes/{id}' , 'LetsCookController@Recipes' );
-Route::get( 'recipe/{title}/{id}/{link}' , 'LetsCookController@Recipe' );
+Route::get( 'recipe/{id}/{title}/{link}' , 'LetsCookController@Recipe' );
 
 //Report Broken Links
 Route::get( 'report/{id}' , 'LetsCookController@Report' );
