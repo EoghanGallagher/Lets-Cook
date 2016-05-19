@@ -8,8 +8,9 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Categories;
 use App\Recipe;
+
 use Faker\Provider\Base;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -55,14 +56,12 @@ class LetsCookController extends BaseController
     }
 
 
-    public function Recipe( $id , $title , $link )
+    public function Recipe( $id , $title  )
     {
-
 
         $res = Recipe::where( 'id' , $id )->get();
 
-
-        return view( 'recipe' )->with( 'video_id' , $link )
+        return view( 'recipe' )
             ->with( 'title' , str_replace( '-' , ' ', $title )  )
             ->with( 'id' , $id  )
             ->with( 'res' , $res );
@@ -74,9 +73,10 @@ class LetsCookController extends BaseController
 
         $pagination = 21;
 
+        $title = $id;
+
         if( $id == 'all' )
         {
-
             $res = Recipe::where( 'published', '=' , 1 )->paginate( $pagination );
 
         }
@@ -87,9 +87,18 @@ class LetsCookController extends BaseController
         else
         {
             $res = Recipe::where( 'category', '=', $id )->paginate( $pagination );
+
+            $title = Categories::select( 'name' )
+                ->where( 'id' , '=' , $id )
+                ->get();
+
+            $title = $title[0]->name;
+
+
         }
 
-        return view( 'recipes' )->with( 'recipes' , $res );
+        return view( 'recipes' )->with( 'recipes' , $res )
+            ->with( 'title' , $title );
 
     }
 
@@ -108,11 +117,27 @@ class LetsCookController extends BaseController
     public function Search( $search )
     {
 
+        $search_title = ' found for ' . $search;
+
         //$res = Recipe::search( $search )->get();
 
         $res = Recipe::search(  $search , [ 'title' => 20, 'ingredients' => 10 , 'author' => 5 ], true )->orderBy( 'title' )->paginate( 12 );
 
-        return view( 'recipes' )->with( 'recipes' , $res );
+        $search_count = count( $res );
+
+        if( $search_count > 1 )
+        {
+            $result =  ' results ';
+        }
+        else
+        {
+            $result = ' result ';
+        }
+
+        $search_title = $search_count . $result . $search_title;
+
+        return view( 'recipes' )->with( 'recipes' , $res )
+                                ->with( 'title' , $search_title );
 
     }
 

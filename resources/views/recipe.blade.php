@@ -33,7 +33,7 @@
                         <div class="video-container">
 
                             <!-- Copy & Pasted from YouTube -->
-                            <iframe width="650" height="349" src="http://www.youtube.com/embed/{{ $video_id  }}?vq=hd720" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="650" height="349" src="http://www.youtube.com/embed/{{ $res[0]->link  }}?vq=hd720" frameborder="0" allowfullscreen></iframe>
 
                         </div>
 
@@ -105,6 +105,10 @@
 
                         <br/>
 
+
+
+                        @if( $res[0]->instructions != "" )
+
                         <div style="margin-left: 5px;">
 
                             <h4>Cooking Instructions</h4>
@@ -112,8 +116,6 @@
                         </div>
 
                         <div id="recipe-ingredients">
-
-
 
                             <?
                                 $instructions = explode( PHP_EOL , $res[0]->instructions );
@@ -137,6 +139,8 @@
 
 
                         </div>
+
+                        @endif
 
                         <br/>
                         <br/>

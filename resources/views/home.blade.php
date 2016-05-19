@@ -48,7 +48,7 @@
 
                     @foreach ( $featured as $value )
 
-                        <a href="recipe/{{  $value[ 'id' ]   }}/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) )  }}/{{ $value[ 'link' ] }}">
+                        <a href="recipe/{{  $value[ 'id' ]   }}/{{ str_replace( ' ' , '-',  trim( $value[ 'title' ] ) )  }}">
 
                             <li>
 
@@ -139,7 +139,7 @@
 
                 @foreach ( $tutorials as $value )
 
-                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'id' ] ) ) }}/{{  $value[ 'title' ]  }}/{{ $value[ 'link' ] }}">
+                    <a href="recipe/{{  $value[ 'id' ]  }}/{{  str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}">
 
                         <li>
 
@@ -163,12 +163,15 @@
 
         </div>
 
+        <a href="recipes/How-To-Guide" style="text-decoration: none">
 
-        <div class="view-more-div centered">
+            <div class="view-more-div centered">
 
-            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+                <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
 
-        </div>
+            </div>
+
+        </a>
 
         <br/>
         <br/>
@@ -196,7 +199,7 @@
 
                 @foreach ( $desserts as $value )
 
-                    <a href="recipe/{{ str_replace( ' ' , '-',  trim( $value[ 'id' ] ) ) }}/{{  $value[ 'title' ]  }}/{{ $value[ 'link' ] }}">
+                    <a href="recipe/{{ $value[ 'id' ]  }}/{{  str_replace( ' ' , '-',  trim( $value[ 'title' ] ) ) }}">
 
                         <li>
 
@@ -216,11 +219,17 @@
             </ul>
 
         </div>
-        <div class="view-more-div centered">
 
-            <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+        <a href="recipes/5" style="text-decoration: none">
 
-        </div>
+            <div class="view-more-div centered">
+
+                <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+
+            </div>
+
+
+        </a>
 
 
     </div>

@@ -6,7 +6,10 @@
     <div class="wrapper">
         <div class="container">
             <br/>
-            <h2 class="centered">Recipes</h2>
+
+
+            <h2 class="centered">{{ $title }}</h2>
+
             <br/>
 
             <!-- <ul class="grid-nav">
@@ -18,7 +21,6 @@
             @if( sizeof( $recipes ) ===  0 )
 
                 <h2 class="centered">No Matches Found</h2>
-
 
             @else
 
@@ -43,7 +45,7 @@
 
                             ?>
 
-                            <a href="/recipe/{{  $value[ 'id' ]  }}/{{ str_replace( ' ' , '-',  trim( $link_title ) ) }}/{{ $value[ 'link' ] }}">
+                            <a href="/recipe/{{  $value[ 'id' ]  }}/{{ str_replace( ' ' , '-',  trim( $link_title ) ) }}">
 
                                 <li>
 
