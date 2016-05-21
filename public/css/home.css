@@ -348,4 +348,14 @@ a.icons:hover {
     background: #C93;
 }
 
+.circle
+{
+    border-style: solid;
+    border-color: #8d7143;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    /* width and height can be anything, as long as they're equal */
+}
+
 

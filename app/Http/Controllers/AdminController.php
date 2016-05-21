@@ -29,58 +29,141 @@ class AdminController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
+    public function UploadImages()
+    {
+
+    }
+
     public function AddArticle()
     {
         $msg = '';
-
+        $upload_dir = 'img/';
+        $upload_count = 0;
+        $failed_upload_count = 0;
+        $total_file_count = 0;
         $article = array();
 
-        if (isset($_REQUEST['title']) ||
-            isset($_REQUEST['link']) ||
-            isset($_REQUEST['description']) ||
-            isset($_REQUEST['region']) ||
-            isset($_REQUEST['country']) ||
-            isset($_REQUEST['category']) ||
-            isset($_REQUEST['sub_category']) ||
-            isset($_REQUEST['skill_level']) ||
-            isset($_REQUEST['content_type']) ||
-            isset($_REQUEST['author']) ||
-            isset($_REQUEST['feature']) ||
-            isset($_REQUEST['main_feature']) ||
-            isset($_REQUEST['published']) ||
-            isset( $_REQUEST['how_to_guide'] )
-        ) {
+
+
+
 
             $recipe = new Recipe();
 
-            $recipe->title = $_REQUEST['title'];
-            $recipe->link = $_REQUEST['link'];
-            $recipe->description = $_REQUEST['description'];
-            $recipe->ingredients = $_REQUEST['ingredients'];
-            $recipe->instructions =  $_REQUEST['instructions'];
 
-            $recipe->region = $_REQUEST['region'];
-            $recipe->country = $_REQUEST['country'];
-            $recipe->category = $_REQUEST['category'];
+            $recipe->title =  $this->ValidateInput( $_POST['title'] );
 
-            $recipe->skill_level = $_REQUEST['skill_level'];
-            $recipe->content_type = $_REQUEST['content_type'];
-            $recipe->author = $_REQUEST['author'];
-            $recipe->featured = $_REQUEST['feature'];
-            $recipe->main_feature = $_REQUEST['main_feature'];
-            $recipe->published = $_REQUEST['published'];
-            $recipe->how_to_guide = $_REQUEST['how_to_guide'];
 
+            $recipe->link = $this->ValidateInput( $_POST['link'] );
+            $recipe->description = $this->ValidateInput( $_POST['description'] );
+            $recipe->ingredients = $this->ValidateInput( $_POST['ingredients'] );
+            $recipe->instructions = $this->ValidateInput( $_POST['instructions'] );
+
+            $recipe->region = $this->ValidateInput( $_POST['region'] );
+            $recipe->country = $this->ValidateInput( $_POST['country'] );
+            $recipe->category =$this->ValidateInput( $_POST['category'] );
+
+            $recipe->skill_level = $this->ValidateInput( $_POST['skill_level'] );
+            $recipe->content_type = $this->ValidateInput( $_POST['content_type'] );
+            $recipe->author = $this->ValidateInput( $_POST['author'] );
 
 
 
-            $link = $recipe->link;
+            //Validate Check Box Input
+
+            if( !empty( $_POST[ 'feature' ] ) )
+            {
+                $recipe->featured = $this->ValidateInput( $_POST[ 'feature' ] );
+            }
+            else
+            {
+                $recipe->featured = 0;
+            }
+
+            if( !empty( $_POST[ 'main_feature' ] ) )
+            {
+                $recipe->main_feature = $this->ValidateInput( $_POST[ 'main_feature' ] );
+            }
+            else
+            {
+                $recipe->main_feature = 0;
+            }
+
+            if( !empty( $_POST[ 'published' ] ) )
+            {
+                $recipe->published = $this->ValidateInput( $_POST[ 'published' ] );
+            }
+            else
+            {
+                $recipe->published = 0;
+            }
+
+            if( !empty( $_POST[ 'how_to_guide' ] ) )
+            {
+                $recipe->how_to_guide = $this->ValidateInput( $_POST[ 'how_to_guide' ] );
+            }
+            else
+            {
+                $recipe->how_to_guide = 0;
+            }
 
 
-            //Check if recipe is video or text
-            if( $recipe->content_type === 'video')
+            if( strtolower( $_POST[ 'content_type' ] ) == 'text' )
             {
 
+                if ( isset( $_FILES ) )
+                {
+
+                    foreach ( $_FILES as $eachFile )
+                    {
+
+                        $total_file_count ++;
+                        //Get file Extension
+
+                        $ext = strtolower( pathinfo( $eachFile['name'], PATHINFO_EXTENSION ) );
+
+
+                        //check size of file size
+                        if ($eachFile['size'] > 74000)
+                        {
+
+                            echo 'File to Big';
+
+                        }
+                        elseif ( ($ext == 'jpg') || ($ext == 'png') )
+                        {
+
+                            if( move_uploaded_file( $eachFile['tmp_name'], $upload_dir .basename( $eachFile['name'] ) ) )
+                            {
+
+                                $upload_count ++;
+
+                                echo  'UC ' . $upload_count;
+
+                            }
+
+                        }
+                        else
+                        {
+                            $failed_upload_count++;
+                            echo $failed_upload_count;
+                        }
+
+
+
+
+
+
+
+
+                    }
+
+                }
+
+            }
+            else
+            {
+
+                $link = $recipe->link;
                 parse_str( parse_url( $link, PHP_URL_QUERY ), $recipe_link );
 
 
@@ -91,11 +174,8 @@ class AdminController extends BaseController
                 }
 
             }
-            else
-            {
-                echo 'Text';
 
-            }
+
 
 
             $res = $recipe->save();
@@ -113,7 +193,9 @@ class AdminController extends BaseController
             return json_encode( $msg );
 
 
-        }
+
+
+
     }
 
 
@@ -132,6 +214,17 @@ class AdminController extends BaseController
                               ->with( 'countries' , $countries )
                               ->with( 'categories' , $categories );
 
+    }
+
+
+
+    public function ValidateInput( $data )
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+
+        return $data;
     }
 
 

@@ -78,11 +78,13 @@ class LetsCookController extends BaseController
         if( $id == 'all' )
         {
             $res = Recipe::where( 'published', '=' , 1 )->paginate( $pagination );
-
+            $title = 'Lots of Recipes';
         }
         else if( $id == 'How-To-Guide' )
         {
             $res = Recipe::where( 'How_To_Guide', '=', 1 )->paginate( $pagination );
+            $title = 'Learn how to cook';
+
         }
         else
         {
@@ -105,9 +107,9 @@ class LetsCookController extends BaseController
     public function Report( $id )
     {
 
-        $recipe = Recipe::find( 1 );
+        $recipe = Recipe::find( $id );
 
-        $recipe->broken_link = true;
+        $recipe->broken_link = 1;
 
         $recipe->save();
 

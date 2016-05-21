@@ -328,9 +328,9 @@
     <div class="footer-text" style="color:#b5b5b5; ">
 
         <div style="width:190px; " class="centered">
-            <div style="float:left; width:60px"><img src="/img/facebook.png" alt="Facebook" class="icons" ></div>
-            <div style="float:left; width:60px"><img src="/img/twitter3.png" alt="Twitter" class="icons" ></div>
-            <div style="float:left; width:60px"><img src="/img/instagram.png" alt="Instagram" class="icons" ></div>
+            <div  style="float:left; width:60px"><img src="/img/facebook.png" alt="Facebook" class="icons" ></div>
+            <div  style="float:left; width:60px"><img src="/img/twitter3.png" alt="Twitter" class="icons" ></div>
+            <div  style="float:left; width:60px"><img src="/img/instagram.png" alt="Instagram" class="icons" ></div>
             <div style="clear:both"></div>
         </div>
 

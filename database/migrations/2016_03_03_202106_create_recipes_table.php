@@ -36,6 +36,7 @@ class CreateRecipesTable extends Migration
             $table->string( 'content_type' );
             $table->boolean( 'broken_link' );
             $table->boolean( 'how_to_guide' );
+            $table->string( 'meta' , 3000 );
 
             $table->timestamps();
 

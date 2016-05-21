@@ -29,16 +29,35 @@
         <div class="row">
             <div class="col-md-offset-2  col-md-8">
 
-                <form id="recipes">
+                <form id="recipes" method="post" enctype="multipart/form-data"  >
+
+                    <fieldset class="form-group">
+                        <label for="content_type">Content Type</label>
+                        <select name="content_type" class="form-control" id="content_type">
+                            <option>Video</option>
+                            <option>Text</option>
+                        </select>
+                    </fieldset>
+
                     <fieldset class="form-group">
                         <label for="title">Title</label>
                         <input name="title" type="text" class="form-control" id="title" placeholder="">
                     </fieldset>
 
-                    <fieldset class="form-group">
+                    <fieldset id="link_fieldset" class="form-group">
                         <label for="link">Link</label>
                         <input name="link" type="text" class="form-control" id="link" placeholder="">
                     </fieldset>
+
+
+                    <fieldset id="image_upload" class="form-group" style="display: none">
+                        <label for="file_input">File input</label>
+                        <input name="file" type="file" class="form-control-file" id="file_input">
+                        <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                    </fieldset>
+
+
+
 
                     <fieldset class="form-group">
                         <label for="description">Description</label>
@@ -102,25 +121,19 @@
 
                     <fieldset class="form-group">
                         <label for="skill_level">Skill Level</label>
-                        <select name="select" class="form-control" id="skill_level">
+                        <select name="skill_level" class="form-control" id="skill_level">
                             <option>Beginner</option>
                             <option>Intermediate</option>
                             <option>Advanced</option>
                         </select>
                     </fieldset>
 
-                    <fieldset class="form-group">
-                        <label for="content_type">Content Type</label>
-                        <select name="content_type" class="form-control" id="content_type">
-                            <option>Video</option>
-                            <option>Text</option>
-                        </select>
-                    </fieldset>
+
 
 
                     <div class="checkbox">
                         <label>
-                            <input name="featured" id="featured"   type="checkbox"> Feature
+                            <input name="feature" id="feature"   type="checkbox"> Feature
                         </label>
                     </div>
 
@@ -138,18 +151,14 @@
 
                     <div class="checkbox">
                         <label>
-                            <input name="howto" id="howto" type="checkbox"> How To Guide
+                            <input name="how_to_guide" id="howto" type="checkbox"> How To Guide
                         </label>
                     </div>
 
 
-                    <fieldset class="form-group">
-                        <label for="file_input">File input</label>
-                        <input name="file" type="file" class="form-control-file" id="file_input">
-                        <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                    </fieldset>
 
-                    <button id="btn_save" class="btn btn-default pull-right" type=button>Save</button>
+
+                    <button id="btn_save" class="btn btn-default pull-right" >Save</button>
 
 
                 </form>
@@ -172,9 +181,77 @@
         $( function()
         {
 
-            SaveRecipe();
+            SetContentType();
+            SaveFormData();
+           // SaveRecipe();
 
         });
+
+
+        function SetContentType()
+        {
+            var content_type = '';
+
+            $( "#content_type" ).change( function()
+            {
+                content_type = $( "#content_type").val();
+
+                if( content_type != '' )
+                {
+
+                    if( content_type.toLowerCase() == 'video' )
+                    {
+
+
+                        $( '#link_fieldset').show();
+                        $( '#image_upload').hide();
+                    }
+                    else
+                    {
+
+                        //Hide Video Link input
+
+                        $( '#link_fieldset').hide();
+                        $( '#image_upload').show();
+
+                        //Show Image upload Field Set
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        function SaveFormData()
+        {
+
+            var url = 'article'
+
+            $("form#recipes").submit(function(){
+
+                var formData = new FormData($(this)[0]);
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        alert(data)
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+
+                return false;
+
+            });
+
+
+
+        }
 
 
         function SaveRecipe()
