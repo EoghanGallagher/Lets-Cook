@@ -32,6 +32,7 @@
 
 .centered
 {
+
     margin: 0 auto;
 
 }
@@ -285,25 +286,38 @@ html, body {
 }
 
 
-a:hover .view-more-div
+.view-more-content:hover
 {
     background-color: #cba65c;
 
 }
 
-a:hover .view-more-div .subtitle
-{
-    color: white;
 
-}
 
-.view-more-content
+
+span.view-more-content
 {
 
     text-align: center;
-    vertical-align: middle;
-    line-height: 40px;
+    vertical-align: top;
+    line-height: 45px;
+    height: 100%;
+    width: 100%;
 }
+
+
+span.view-more-content.subtitle
+{
+
+   color: #cba65c;
+}
+
+span.view-more-content.subtitle:hover
+{
+
+    color: white;
+}
+
 
 .view-more-link
 {
@@ -348,7 +362,7 @@ ul.pagination li a
 {
     background-color: rgba(233, 194, 96, 0.5);
     color: #fff;
-
+   
 }
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
@@ -366,8 +380,8 @@ ul.pagination li a
     border-color: #cba65c;
 }
 
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); }
+
+
 
 
 

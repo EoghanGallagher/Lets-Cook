@@ -37,6 +37,7 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link href="/css/home.css" rel="stylesheet">
     <link href="/css/letscook.css" rel="stylesheet">
+    <link href="/css/hover-min.css" rel="stylesheet">
 
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet" type="text/css">
@@ -105,6 +106,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
                     <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
+
 
                         <div class="row">
                             <div class="col-sm-3">

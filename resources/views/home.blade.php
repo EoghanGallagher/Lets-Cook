@@ -54,7 +54,7 @@
 
                                 <div class="li-wrapper">
 
-                                    <img class="image-border grow" src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
+                                    <img class="image-border " src="http://img.youtube.com/vi/{{ $value[ 'link' ] }}/mqdefault.jpg" />
 
                                 </div>
                                 <br/>
@@ -75,7 +75,7 @@
 
             <div class="view-more-div centered">
 
-                <span class="view-more-content subtitle" style="vertical-align: middle">View More</span>
+                <span class="view-more-content subtitle " >View More</span>
 
             </div>
 
