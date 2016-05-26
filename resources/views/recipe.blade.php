@@ -2,9 +2,23 @@
 
 @section( 'meta' )
 
-    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
-    <meta name="description" content="TEST">
-    <meta name="author" content="test">
+    <?php
+    $url = 'http://www.letscook.ie/recipe/'. $res[0]->id . '/' . str_replace( ' ' , '-',  trim( $res[0]->title ) );
+      $image = 'http://img.youtube.com/vi/' .  $res[0]->link . '/mqdefault.jpg' ;
+      $description =  substr( $res[0]->description , 0 , 180 ) . '...' ;
+    ?>
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property=”og:type” content=”website” />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property=”og:image” content=”{{ $image }}" />
+
+
+    <meta name=”twitter:card” content=”summary” />
+    <meta name=”twitter:title” content=”{{ $title  }}” />
+    <meta name=”twitter:description” content=”{{ $description }}” />
+    <meta name=”twitter:url” content=”{{ $url }}” />
+    <meta name=”twitter:image” content=”{{ $image }}" />
 
 @endsection
 

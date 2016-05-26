@@ -1,10 +1,26 @@
 @extends('app')
 
+
+@section( 'meta' )
+
+
+    <meta property="og:title" content="Lets Cook" />
+    <meta property="og:url" content="http://www.letscook.ie" />
+    <meta property=”og:type” content=”website” />
+    <meta property="og:description" content="a site where you can learn to cook and find some amazing recipes." />
+    <meta property=”og:image” content=”http://www.letcook.ie/image-name.jpg” />
+
+
+@endSection
+
 @section( 'title' )
 
      Lets Cook - Home
 
 @endsection
+
+
+
 
 @section('content')
 
