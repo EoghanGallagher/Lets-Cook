@@ -142,7 +142,7 @@
 
                                         @if( !empty( $value  )  )
 
-                                            <li style="font-weight: 500; font-style: italic">{{ $value }}</li>
+                                            <li> {{ $value }} </li>
 
                                         @endif
 

@@ -336,7 +336,7 @@
 
         <br/>
 
-        <h4 class="signature centered">© 2016 TimTam Web Design</h4>
+        <h4 class="company centered">© 2016 TamTam Web Design</h4>
 
     </div>
 

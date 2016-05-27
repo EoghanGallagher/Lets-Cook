@@ -8,7 +8,7 @@
             <br/>
 
 
-            <h2 class="centered">{{ $title }}</h2>
+            <h2 class="home-title  centered">{{ $title }}</h2>
 
             <br/>
 
@@ -55,7 +55,7 @@
 
                                     </div>
                                     <br/>
-                                    <h4 class="centered"> {{ $value[ 'title' ]}} </h4>
+                                    <h4 class="home-title centered"> {{ $value[ 'title' ]}} </h4>
 
                                 </li>
 

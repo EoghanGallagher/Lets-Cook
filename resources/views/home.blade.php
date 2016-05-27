@@ -74,7 +74,7 @@
 
                                 </div>
                                 <br/>
-                                <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
+                                <h4 class="home-title centered"> {{ $value[ 'title' ] }} </h4>
 
                             </li>
 
@@ -165,7 +165,7 @@
 
                             </div>
                             <br/>
-                            <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
+                            <h4 class="home-title  centered"> {{ $value[ 'title' ] }} </h4>
 
                         </li>
 
@@ -225,7 +225,7 @@
 
                             </div>
                             <br/>
-                            <h4 class="centered"> {{ $value[ 'title' ] }} </h4>
+                            <h4 class="home-title  centered"> {{ $value[ 'title' ] }} </h4>
 
                         </li>
                     </a>
