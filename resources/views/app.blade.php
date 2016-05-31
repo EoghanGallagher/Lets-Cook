@@ -22,13 +22,19 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-
     <!-- Bootstrap core CSS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init(
+                {
+                    selector:'#ingredients',
+                    entity_encoding : 'raw'
 
+
+                });</script>
 
 
     <!-- Custom styles for this template -->
@@ -41,7 +47,8 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet" type="text/css">
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
 
 
 
@@ -102,9 +109,10 @@
             <ul class="nav navbar-nav">
                 <li id="home" value="9999"><a href="/home">Home</a></li>
                 <li class="dropdown">
+
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
                     <ul class="dropdown-menu multi-column columns-3" id="main-dropdown">
-
+                        <div id="arrow-pointer" class="arrow-up"></div>
 
                         <div class="row">
                             <div class="col-sm-3">
@@ -116,6 +124,8 @@
                                     <li value="3"><a href="#">Bread Recipes</a></li>
                                     <li class="divider"></li>
                                     <li value="4"><a href="#">Breakfast & Brunch</a></li>
+                                    <li class="divider"></li>
+                                    <li value="23"><a href="#">Chili</a></li>
                                     <li class="divider"></li>
                                     <li value="5"><a href="#">Desserts</a></li>
                                     <li class="divider"></li>
@@ -164,8 +174,6 @@
                                     <li value="21"><a href="#">Soups</a></li>
                                     <li class="divider"></li>
                                     <li value="22"><a href="#">Stews</a></li>
-                                    <li class="divider"></li>
-                                    <li value="23"><a href="#">Chili</a></li>
                                     <li class="divider"></li>
                                 </ul>
                             </div>
@@ -336,7 +344,7 @@
 
         <br/>
 
-        <h4 class="company centered">© 2016 TamTam Web Design</h4>
+        <h4 class="company centered">©2016 TamTam Web Design</h4>
 
     </div>
 

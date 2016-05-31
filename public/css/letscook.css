@@ -142,6 +142,12 @@
         min-width: 240px !important;
         overflow-x: hidden;
     }
+
+    #arrow-pointer
+    {
+        display:none;
+    }
+
 }
 
 body
@@ -275,7 +281,10 @@ html, body {
 {
     background-color: white;
 }
-
+.navbar-collapse.collapse.in
+{
+    background-color: #101010;
+}
 .view-more-div
 {
     width:200px;
@@ -388,6 +397,21 @@ ol li
     margin: 0 0 12px 0;
     font-weight: 500;
     font-style: italic;
+}
+
+.arrow-up
+{
+    position:absolute;
+
+    top:-10px;
+    left:35px;
+
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+
+    border-bottom: 10px solid #ffffff;
 }
 
 

@@ -10,6 +10,8 @@
     <meta property="og:description" content="a site where you can learn to cook and find some amazing recipes." />
     <meta property=”og:image” content=”http://www.letcook.ie/image-name.jpg” />
 
+    <meta name="keywords" content="Cooking Site, Cook, cooking, Recipe, Recipes, Healthy, Main Courses, Appetizers, Desserts, Snacks, Drinks, Salads, Breakfast, Soups, Stews, Bread , Barbecue, Seafood , Side Dishes ">
+
 
 @endSection
 

@@ -9,12 +9,14 @@
 namespace App\Http\Controllers;
 
 
+
 use DB;
 
 use App\Recipe;
 use App\Region;
 use App\Countries;
 use App\Categories;
+use App\CustomClasses\MetaGenerator;
 
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -45,8 +47,6 @@ class AdminController extends BaseController
 
 
 
-
-
             $recipe = new Recipe();
 
 
@@ -55,7 +55,10 @@ class AdminController extends BaseController
 
             $recipe->link = $this->ValidateInput( $_POST['link'] );
             $recipe->description = $this->ValidateInput( $_POST['description'] );
-            $recipe->ingredients = $this->ValidateInput( $_POST['ingredients'] );
+            $recipe->ingredients =   $_POST['ingredients'];;
+
+
+
             $recipe->instructions = $this->ValidateInput( $_POST['instructions'] );
 
             $recipe->region = $this->ValidateInput( $_POST['region'] );
@@ -68,11 +71,22 @@ class AdminController extends BaseController
 
 
 
+
+
             //Validate Check Box Input
 
             if( !empty( $_POST[ 'feature' ] ) )
             {
-                $recipe->featured = $this->ValidateInput( $_POST[ 'feature' ] );
+
+                if(  $this->ValidateInput( $_POST[ 'feature' ] === 'on'  ) )
+                {
+                    $recipe->featured = 1;
+                }
+                else
+                {
+                    $recipe->featured = 0;
+                }
+
             }
             else
             {
@@ -81,7 +95,15 @@ class AdminController extends BaseController
 
             if( !empty( $_POST[ 'main_feature' ] ) )
             {
-                $recipe->main_feature = $this->ValidateInput( $_POST[ 'main_feature' ] );
+
+                if(  $this->ValidateInput( $_POST[ 'main_feature' ] ) === 'on'  )
+                {
+                    $recipe->main_feature = 1;
+                }
+                else
+                {
+                    $recipe->main_feature = 0;
+                }
             }
             else
             {
@@ -99,7 +121,17 @@ class AdminController extends BaseController
 
             if( !empty( $_POST[ 'how_to_guide' ] ) )
             {
-                $recipe->how_to_guide = $this->ValidateInput( $_POST[ 'how_to_guide' ] );
+
+
+                if(  $this->ValidateInput( $_POST[ 'how_to_guide' ] ) === 'on' )
+                {
+                    $recipe->how_to_guide = 1;
+                }
+                else
+                {
+                    $recipe->how_to_guide = 0;
+                }
+
             }
             else
             {
@@ -148,13 +180,6 @@ class AdminController extends BaseController
                             echo $failed_upload_count;
                         }
 
-
-
-
-
-
-
-
                     }
 
                 }
@@ -174,6 +199,15 @@ class AdminController extends BaseController
                 }
 
             }
+
+            $meta_content = $recipe->title . ' ' . $recipe->description . ' ' . $recipe->ingredients . ' ' . $recipe->instructions;
+
+
+
+            $metaGenerator = new MetaGenerator();
+            $meta_keywords = $metaGenerator->ExtractKeyWords( $meta_content );
+
+            $recipe->meta = implode( ',',  $meta_keywords );
 
 
 
@@ -222,7 +256,7 @@ class AdminController extends BaseController
     {
         $data = trim($data);
         $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+        //$data = htmlspecialchars($data);
 
         return $data;
     }
@@ -385,6 +419,14 @@ class AdminController extends BaseController
 
         return 'Tables Populated ...';
 
+
+    }
+
+
+    public function Test()
+    {
+
+        $metaGenerator = new MetaGenerator();
 
     }
 

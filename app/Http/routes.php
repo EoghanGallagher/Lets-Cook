@@ -41,6 +41,8 @@ Route::get( 'admin' , 'AdminController@LoadAdmin'  );
 Route::post( 'article' , 'AdminController@AddArticle' );
 Route::get( 'populate' , 'AdminController@PopulateTables' );
 
+Route::get( 'test' , 'AdminController@Test' );
+
 
 
 Route::get( 'home' , 'LetsCookController@Home' );
@@ -52,6 +54,8 @@ Route::get( 'report/{id}' , 'LetsCookController@Report' );
 
 
 Route::get( 'search/{search}' , 'LetsCookController@Search' );
+
+
 
 
 

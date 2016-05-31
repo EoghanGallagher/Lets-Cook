@@ -30,13 +30,14 @@ class CreateRecipesTable extends Migration
             $table->boolean( 'featured' );
             $table->boolean( 'main_feature' );
             $table->boolean( 'published' );
+            $table->string( 'blurb' , 2000 );
             $table->string( 'description' , 3000 );
-            $table->string( 'ingredients' , 3000 );
+            $table->string( 'ingredients' , 25000 );
             $table->string( 'instructions', 3000 );
             $table->string( 'content_type' );
             $table->boolean( 'broken_link' );
             $table->boolean( 'how_to_guide' );
-            $table->string( 'meta' , 3000 );
+            $table->string( 'meta' , 1500 );
 
             $table->timestamps();
 

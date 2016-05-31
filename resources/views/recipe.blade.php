@@ -3,16 +3,24 @@
 @section( 'meta' )
 
     <?php
-    $url = 'http://www.letscook.ie/recipe/'. $res[0]->id . '/' . str_replace( ' ' , '-',  trim( $res[0]->title ) );
+
+      $url = 'http://www.letscook.ie/recipe/'. $res[0]->id . '/' . str_replace( ' ' , '-',  trim( $res[0]->title ) );
       $image = 'http://img.youtube.com/vi/' .  $res[0]->link . '/mqdefault.jpg' ;
       $description =  substr( $res[0]->description , 0 , 180 ) . '...' ;
+      $meta = $res[0]->meta;
+
+
+
+
     ?>
+
+
     <meta property="og:title" content="{{ $title }}" />
     <meta property="og:url" content="{{ $url }}" />
     <meta property=”og:type” content=”website” />
     <meta property="og:description" content="{{ $description }}" />
     <meta property=”og:image” content=”{{ $image }}" />
-
+    <meta name="keywords" content=" {{  $meta  }} ">
 
     <meta name=”twitter:card” content=”summary” />
     <meta name=”twitter:title” content=”{{ $title  }}” />
@@ -58,8 +66,6 @@
 
                         </div>
 
-                        <br/>
-
 
                         <div id="recipe-rating">
 
@@ -84,14 +90,12 @@
                         @if( $res[0]->ingredients != "" )
 
 
-                            <?
-                                $ingredients = explode( PHP_EOL , $res[0]->ingredients );
-                            ?>
+
 
 
                             <div style="margin-left: 5px;">
 
-                                <h4>Ingredients</h4>
+                                <h4>Ingredients and Cooking Instructions</h4>
 
                             </div>
 
@@ -99,19 +103,14 @@
 
                             <div id="recipe-ingredients">
 
-                                <ul style="list-style: none;">
 
-                                    @foreach ( $ingredients as $value )
 
-                                        @if( !empty( $value  )  )
+                                 <?php
 
-                                            <li style="font-weight: 600; font-style: italic">{{ $value }}</li>
+                                    echo $res[0]->ingredients;
 
-                                        @endif
+                                ?>
 
-                                    @endforeach
-
-                                </ul>
 
                             </div>
 
@@ -119,42 +118,6 @@
 
                         <br/>
 
-
-
-                        @if( $res[0]->instructions != "" )
-
-                        <div style="margin-left: 5px;">
-
-                            <h4>Cooking Instructions</h4>
-
-                        </div>
-
-                        <div id="recipe-ingredients">
-
-                            <?
-                                $instructions = explode( PHP_EOL , $res[0]->instructions );
-                            ?>
-
-
-                                <ol>
-
-                                    @foreach ( $instructions as $value )
-
-                                        @if( !empty( $value  )  )
-
-                                            <li> {{ $value }} </li>
-
-                                        @endif
-
-                                    @endforeach
-
-                                </ol>
-
-
-
-                        </div>
-
-                        @endif
 
                         <br/>
                         <br/>
@@ -172,7 +135,6 @@
                     <div class="recipe-container">
 
                     <div class="adverts1" style="margin-top: 75px; margin-left: 15px;">
-
 
 
                     </div>
@@ -203,9 +165,8 @@
 
             </div>
 
-
-
             <br/>
+
             <div class="row less-gutter">
 
                 <div class="col-md-offset-1 col-md-6">
@@ -244,9 +205,7 @@
         {
             var l = window.location;
             var base_url = l.protocol + "//" + l.host + "/" ;
-
             var url = base_url + '/report/' + id;
-
 
             $.ajax({
 

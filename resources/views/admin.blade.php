@@ -20,6 +20,8 @@
 
                 <h3>Add Recipe</h3>
 
+
+
             </div>
 
         </div>
@@ -63,6 +65,18 @@
                         <label for="description">Description</label>
                         <textarea name="description" class="form-control" id="description" rows="3"></textarea>
                     </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="blurb">Blurb</label>
+                        <textarea name="blurb" class="form-control" id="blurb" rows="3"></textarea>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="keywords">Meta Keywords</label>
+                        <textarea name="keywords" class="form-control" id="keywords" rows="3"></textarea>
+                    </fieldset>
+
+
 
                     <fieldset class="form-group">
                         <label for="recipe">Ingredients</label>
@@ -181,6 +195,7 @@
         $( function()
         {
 
+
             SetContentType();
             SaveFormData();
            // SaveRecipe();
@@ -188,6 +203,7 @@
         });
 
 
+        //Switch fields for video and text recipes
         function SetContentType()
         {
             var content_type = '';
@@ -229,16 +245,27 @@
 
             var url = 'article'
 
+
+
+
             $("form#recipes").submit(function(){
 
-                var formData = new FormData($(this)[0]);
+
+
+                tinyMCE.triggerSave();
+                var formData = new FormData( $(this)[0] );
+
+
+
 
                 $.ajax({
                     url: url,
                     type: 'POST',
                     data: formData,
-                    success: function (data) {
-                        alert(data)
+                    success: function ( data )
+                    {
+                        alert( data )
+                        $( '#recipes' ).trigger( 'reset' );
                     },
                     cache: false,
                     contentType: false,
@@ -320,13 +347,18 @@
                     alert( 'Category Field Cannot Be Empty' );
                 }
 
+                alert( $( '#feature').val() );
 
-                if( $('#featured').is(':checked') )
+                if( $('#feature').is(':checked') )
                 {
                     feature = 1;
+
+
                 }
                 else
                 {
+
+
                     feature = 0;
                 }
 
@@ -401,10 +433,12 @@
                     dataType : 'json',
                     success: function( data )
                     {
+
+                        $( '#recipes' ).trigger( 'reset' );
                         alert( 'Recipe Saved Successfully' );
                         console.log( 'Response OK ' + data );
 
-                        $( '#recipes' ).trigger( 'reset' );
+
 
                     },
                     type: 'POST'
