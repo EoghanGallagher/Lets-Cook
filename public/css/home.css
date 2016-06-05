@@ -46,6 +46,8 @@ h4
     color: #8d7143;
     text-align: left;
     margin-top: 10px;
+    margin-bottom: 0px;
+    line-height: 1.3em;
 
     font-style: italic;
 }
@@ -287,6 +289,28 @@ ul.rig.columns-3 li.li-wrapper
 
 }
 
+#report-broken-link
+{
+    margin: 5px 10px 0px 10px;
+    left:15px
+}
+a:link {
+    text-decoration: none;
+}
+
+#report-broken-link a
+{
+    font-family:Arial,Montserrat,Georgia,serif;
+    color: #8d7143;
+}
+
+#report-broken-link a:hover
+{
+
+    color: #e9c260;
+
+}
+
 #recipe-rating
 {
 
@@ -306,15 +330,27 @@ ul.rig.columns-3 li.li-wrapper
 
 }
 
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: .5em;
+    -webkit-margin-after: .5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 10px;
+}
+
 #recipe-ingredients
 {
-    margin-top:-30px;
+    margin-top:-70px;
     padding-left: 10px;
-    margin-left:5px;
+    margin-left:0px;
     white-space: pre-line;
     font-style: italic;
     font-weight: 500;
 }
+
+
 
 .recipe-list
 {

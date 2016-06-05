@@ -205,7 +205,10 @@ class AdminController extends BaseController
 
 
             $metaGenerator = new MetaGenerator();
-            $meta_keywords = $metaGenerator->ExtractKeyWords( $meta_content );
+
+            $meta_content = $words = preg_replace('/[0-9]+/', ' ', $meta_content);
+
+            $meta_keywords = $metaGenerator->ExtractKeyWords( strip_tags( $meta_content ) );
 
             $recipe->meta = implode( ',',  $meta_keywords );
 

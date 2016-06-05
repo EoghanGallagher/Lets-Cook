@@ -265,7 +265,7 @@
                     success: function ( data )
                     {
                         alert( data )
-                        $( '#recipes' ).trigger( 'reset' );
+                       // $( '#recipes' ).trigger( 'reset' );
                     },
                     cache: false,
                     contentType: false,

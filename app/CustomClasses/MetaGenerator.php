@@ -24,9 +24,9 @@ class MetaGenerator
     {
         mb_internal_encoding('UTF-8');
         $stopWords = array(
-            'the',
-            'with',
-            'and',
+            'the', 'how',
+            'with','tsp',
+            'and', 'tbsp',
             'for',
             'into' ,
             'until' ,

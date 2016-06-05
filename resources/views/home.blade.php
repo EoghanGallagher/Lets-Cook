@@ -89,6 +89,7 @@
             </div>
 
 
+
         <a href="recipes/all" style="text-decoration: none">
 
             <div class="view-more-div centered">
@@ -100,8 +101,8 @@
         </a>
 
 
-        <br/>
-        <br/>
+
+
 
 
 
@@ -129,8 +130,7 @@
 
 
         <br/>
-        <br/>
-        <br/>
+
 
 
     </div>
@@ -192,9 +192,7 @@
         </a>
 
         <br/>
-        <br/>
-        <br/>
-        <br/>
+
 
     </div>
 
@@ -252,11 +250,7 @@
 
     </div>
     <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
 
 </div>
 <!--/.wrapper-->

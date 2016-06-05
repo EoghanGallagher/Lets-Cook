@@ -28,13 +28,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script>tinymce.init(
-                {
-                    selector:'#ingredients',
-                    entity_encoding : 'raw'
+
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Niconne|Damion|Pinyon+Script|Allura|Parisienne|Italianno|Arizonia|Ramabhadra|Rubik:400,900|Coda:400,800' rel='stylesheet' type='text/css'>
+    <script>tinymce.init({
+
+            selector: '#ingredients',
 
 
-                });</script>
+        });
+
+    </script>
+
 
 
     <!-- Custom styles for this template -->
@@ -103,7 +107,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#"><span class="overstated2">lets</span><span class="overstated">cook!</span></a>
+            <a class="navbar-brand " href="#"><div class="logo-2">COOK<span style="font-style:italic; color: ">!</span><div class="logo-1">Lets</div></div></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -117,6 +121,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <ul class="multi-column-dropdown">
+                                    <li class="divider"></li>
                                     <li value="1"><a href="#">Appetizers & Snacks</a></li>
                                     <li class="divider"></li>
                                     <li value="2"><a href="#">Barbecue & Grilling</a></li>
@@ -135,6 +140,7 @@
                             </div>
                             <div class="col-sm-3">
                                 <ul class="multi-column-dropdown">
+                                    <li class="divider"></li>
                                     <li value="7"><a href="#">Drinks</a></li>
                                     <li class="divider"></li>
                                     <li value="8"><a href="#">Eggs</a></li>
@@ -147,12 +153,14 @@
                                     <li class="divider"></li>
                                     <li value="12"><a href="#">Holidays & Events</a></li>
                                     <li class="divider"></li>
+                                    <li value="14"><a href="#">Lunch Recipes</a></li>
+                                    <li class="divider"></li>
+
 
                                 </ul>
                             </div>
                             <div class="col-sm-3">
                                 <ul class="multi-column-dropdown">
-                                    <li value="14"><a href="#">Lunch Recipes</a></li>
                                     <li class="divider"></li>
                                     <li value="15"><a href="#">Main Dishes</a></li>
                                     <li class="divider"></li>
@@ -169,6 +177,7 @@
 
                             <div class="col-sm-3">
                                 <ul class="multi-column-dropdown">
+                                    <li class="divider"></li>
                                     <li value="20"><a href="#">Side Dishes</a></li>
                                     <li class="divider"></li>
                                     <li value="21"><a href="#">Soups</a></li>

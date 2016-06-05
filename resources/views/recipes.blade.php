@@ -11,6 +11,8 @@
             <h2 class="home-title  centered">{{ $title }}</h2>
 
             <br/>
+            <br/>
+            <br/>
 
             <!-- <ul class="grid-nav">
                  <li><a href="#" data-id="two-columns" >2 Columns</a></li>

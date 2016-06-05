@@ -58,72 +58,68 @@
                             <iframe width="650" height="349" src="http://www.youtube.com/embed/{{ $res[0]->link  }}?vq=hd720" frameborder="0" allowfullscreen></iframe>
 
                         </div>
+                        <div class="row less-gutter pull-right">
 
-                        <div id="recipe-title">
+                            <div id="report-broken-link" class="col-md-12">
 
-                            <h3>{{ $title }}</h3>
-                            <div><span class="signature">by {{ $res[0]->author }}</span></div>
+                                <a id="report-broken" name="{{ $id  }}"  href="#">Report Broken Link</a>
+
+                            </div>
 
                         </div>
 
+                        <div class="recipe-content">
+                            <br/>
 
-                        <div id="recipe-rating">
+                            <div id="recipe-title">
+
+                                <h3>{{ $title }}</h3>
+                                <div><span class="signature">by {{ $res[0]->author }}</span></div>
+
+                            </div>
+
+
+                            <div id="recipe-rating">
 
 
 
+                            </div>
+
+                            @if( $res[0]->description != "" )
+
+
+                                <div id="recipe-description">
+
+                                    {{  $res[0]->description  }}
+
+                                </div>
+
+
+                            @endif
+
+                            <br/>
+
+                            @if( $res[0]->ingredients != "" )
+
+                                <div id="recipe-ingredients">
+
+
+
+                                     <?php
+
+                                        echo $res[0]->ingredients;
+
+                                    ?>
+
+
+                                </div>
+
+                            @endif
+
+                        <br/>
+                            <br/>
+                        <br/>
                         </div>
-
-                        @if( $res[0]->description != "" )
-
-
-                            <div id="recipe-description">
-
-                                {{  $res[0]->description  }}
-
-                            </div>
-
-
-                        @endif
-
-                        <br/>
-
-                        @if( $res[0]->ingredients != "" )
-
-
-
-
-
-                            <div style="margin-left: 5px;">
-
-                                <h4>Ingredients and Cooking Instructions</h4>
-
-                            </div>
-
-
-
-                            <div id="recipe-ingredients">
-
-
-
-                                 <?php
-
-                                    echo $res[0]->ingredients;
-
-                                ?>
-
-
-                            </div>
-
-                        @endif
-
-                        <br/>
-
-
-                        <br/>
-                        <br/>
-
-
-
 
                     </div>
 
@@ -167,19 +163,7 @@
 
             <br/>
 
-            <div class="row less-gutter">
 
-                <div class="col-md-offset-1 col-md-6">
-
-                    <a href="/home">Home Page</a>
-
-                    <span>|</span>
-
-                    <a id="report-broken" name="{{ $id  }}"  href="#">Report Broken Link</a>
-
-                </div>
-
-            </div>
 
         </div>
 
