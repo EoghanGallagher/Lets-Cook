@@ -8,7 +8,7 @@
             <br/>
 
 
-            <h2 class="home-title  centered">{{ $title }}</h2>
+            <h2 class="home-heading  centered">{{ $title }}</h2>
 
             <br/>
             <br/>
@@ -85,7 +85,9 @@
     </div>
     <!--/.wrapper-->
 
-
+   <!-- Paginiation -->
+    <br/>
+    <br/>
     <div class="centered">
 
         <?php echo $recipes->render(); ?>

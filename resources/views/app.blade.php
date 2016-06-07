@@ -107,7 +107,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#"><div class="logo-2">COOK<span style="font-style:italic; color: ">!</span><div class="logo-1">Lets</div></div></a>
+            <a class="navbar-brand " href="#"><div class="logo-2">COOK<span style="font-style:italic; color: ">!</span><div class="logo-1 glow">Lets</div></div></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -172,15 +172,15 @@
                                     <li class="divider"></li>
                                     <li value="19"><a href="#">Seafood Recipes</a></li>
                                     <li class="divider"></li>
+                                    <li value="20"><a href="#">Side Dishes</a></li>
+                                    <li class="divider"></li>
+                                    <li value="21"><a href="#">Soups</a></li>
+                                    <li class="divider"></li>
                                 </ul>
                             </div>
 
                             <div class="col-sm-3">
                                 <ul class="multi-column-dropdown">
-                                    <li class="divider"></li>
-                                    <li value="20"><a href="#">Side Dishes</a></li>
-                                    <li class="divider"></li>
-                                    <li value="21"><a href="#">Soups</a></li>
                                     <li class="divider"></li>
                                     <li value="22"><a href="#">Stews</a></li>
                                     <li class="divider"></li>
@@ -300,7 +300,7 @@
 
 
                 </li>
-                <li id="how_to_guide" value="9999"><a href="/recipes/How-To-Guide">How To Guides</a></li>
+                <li id="how_to_guide" value="9999"><a href="/recipes/How-To-Guide">Cooking Tutorials</a></li>
 
 
             </ul>

@@ -27,7 +27,7 @@ class MetaGenerator
             'the', 'how',
             'with','tsp',
             'and', 'tbsp',
-            'for',
+            'for', 'make',
             'into' ,
             'until' ,
             'from' ,

@@ -16,6 +16,7 @@ use App\Recipe;
 use App\Region;
 use App\Countries;
 use App\Categories;
+use App\User;
 use App\CustomClasses\MetaGenerator;
 
 
@@ -33,6 +34,18 @@ class AdminController extends BaseController
 
     public function UploadImages()
     {
+
+    }
+
+    public function CreateUser()
+    {
+
+        return User::create([
+            'name' => 'Eoghan',
+            'email' => 'eoghan.gallagher@gmail.com',
+            'username' => 'wormwood',
+            'password' => bcrypt( 'password' ),
+        ]);
 
     }
 

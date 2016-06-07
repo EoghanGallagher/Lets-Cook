@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LetsCookController@Home');
 
 /*
 |--------------------------------------------------------------------------
@@ -31,15 +29,21 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
 
 //Admin Routes
 //export Nested Products Table to Products export Table
 
-Route::get( 'admin' , 'AdminController@LoadAdmin'  );
+Route::get( 'admin' , ['middleware' => 'auth.basic', 'uses' => 'AdminController@LoadAdmin' ]  );
+
 
 Route::post( 'article' , 'AdminController@AddArticle' );
 Route::get( 'populate' , 'AdminController@PopulateTables' );
+Route::get( 'user' , 'AdminController@CreateUser' );
 
 Route::get( 'test' , 'AdminController@Test' );
 
@@ -54,6 +58,9 @@ Route::get( 'report/{id}' , 'LetsCookController@Report' );
 
 
 Route::get( 'search/{search}' , 'LetsCookController@Search' );
+
+
+
 
 
 
