@@ -184,6 +184,8 @@
                                     <li class="divider"></li>
                                     <li value="22"><a href="#">Stews</a></li>
                                     <li class="divider"></li>
+                                    <li value="26"><a href="#">Vegan</a></li>
+                                    <li class="divider"></li>
                                 </ul>
                             </div>
 
@@ -197,7 +199,7 @@
 
                         <div class="row">
                             <div class="col-sm-2">
-                                <ul class="multi-column-dropdown">
+                                <ul class="multi-column-dropdown dropdown-mod">
                                     <li value="1"><a href="#">American</a></li>
                                     <li class="divider"></li>
                                     <li value="2"><a href="#">Argentinian</a></li>

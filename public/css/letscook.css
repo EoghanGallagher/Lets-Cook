@@ -154,6 +154,13 @@
     background-color: #f5f5f5;
 }
 
+
+
+.dropdown-mod li
+{
+    margin-left: 0;
+}
+
 @media (max-width: 767px)
 {
     .dropdown-menu.multi-column
@@ -485,6 +492,23 @@ li
     border-right: 9px solid transparent;
 
     border-bottom: 10px solid #ffffff;
+}
+
+.ingredients
+{
+    padding-left: -20px;
+}
+
+ol
+{
+    margin-top: 0px;
+    top: -10px;
+}
+
+ol li
+{
+    margin-left: 20px;
+    margin-bottom: 0px;
 }
 
 
